@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>McDonald's — a data company that sells burgers</title>
+<style>
+:root{--g0:#0d1117;--g1:#11161e;--g2:#161c26;--g3:#1c2330;--line:#272f3d;--line2:#1e2635;
+--ink:#e8e3d8;--ink2:#b8c0cc;--ink3:#7a8494;--teal:#3ec9b6;--orange:#e09858;--gold:#c9a84c;--red:#d97a6c;--blue:#6c9fd9;--purple:#a98cd9;
+--serif:Palatino,"Palatino Linotype","Book Antiqua",Charter,Georgia,serif;--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--g0);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.75;-webkit-font-smoothing:antialiased}
+.wrap{max-width:800px;margin:0 auto;padding:0 clamp(22px,5vw,60px) 100px}
+a{color:var(--teal);text-underline-offset:3px}
+.top{padding:22px 0 4px;display:flex;gap:16px;flex-wrap:wrap}
+.top a{font-family:var(--mono);font-size:.68rem;color:var(--ink3);text-decoration:none}.top a:hover{color:var(--teal)}
+.hero{padding:26px 0 26px;border-bottom:1px solid var(--line)}
+.hero .eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.hero h1{font-size:clamp(1.9rem,5vw,2.7rem);font-weight:700;line-height:1.09;color:var(--ink);letter-spacing:-.02em;text-wrap:balance;margin-bottom:.35em}
+.hero .sub{font-size:1.12rem;color:var(--ink2);font-style:italic}
+h2{font-size:1.45rem;font-weight:600;color:var(--ink);margin:2.2em 0 .5em;padding-top:1.2em;border-top:1px solid var(--line2);line-height:1.15}
+h2:first-of-type{border-top:none;margin-top:1.4em}
+p{color:var(--ink2);margin-bottom:1.05em}
+strong{color:var(--ink);font-weight:600}em{color:var(--gold);font-style:italic}
+.lede{font-size:1.13rem;color:var(--ink);line-height:1.7}
+.big{background:var(--g2);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:18px 22px;margin:1.5em 0}
+.big .lbl{font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.big.warn{border-left-color:var(--red)}.big.warn .lbl{color:var(--red)}
+.big p{color:var(--ink);font-size:1.08rem;margin:0}
+.fact{display:flex;gap:14px;align-items:flex-start;background:var(--g1);border:1px solid var(--line2);border-radius:10px;padding:13px 16px;margin:11px 0}
+.fact .num{font-family:var(--mono);font-size:1.3rem;color:var(--gold);font-weight:700;line-height:1.15;min-width:104px}
+.fact .txt{font-size:.96rem;color:var(--ink2)}.fact .txt b{color:var(--ink)}
+.pts{list-style:none;margin:1em 0}
+.pts li{position:relative;padding:7px 0 7px 26px;border-bottom:1px solid var(--line2);color:var(--ink2);font-size:1rem}
+.pts li:before{content:"›";position:absolute;left:6px;color:var(--gold);font-weight:700}.pts li b{color:var(--ink)}
+footer{padding:38px 0;color:var(--ink3);font-family:var(--mono);font-size:.72rem;border-top:1px solid var(--line2);margin-top:2.4em;line-height:1.9}
+footer a{color:var(--teal);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a href="index.html">← all companies</a><a href="walmart.html">next: Walmart →</a></div>
+
+  <header class="hero">
+    <div class="eyebrow">Group F · Old-school companies that are really tech now</div>
+    <h1>McDonald's — a data company that sells burgers</h1>
+    <div class="sub">The app knows you better than any cashier ever could. That's the whole point.</div>
+  </header>
+
+  <p class="lede">This is the group you suggested — companies that look old-fashioned but really run on apps, data, and AI. <strong>McDonald's</strong> is the perfect example. It has quietly become a data-and-technology business that happens to sell burgers.</p>
+
+  <h2>The data engine hiding in the app</h2>
+  <p>For 70 years, McDonald's was nearly blind to its own customers: you paid cash, walked out, and left no trace. The <strong>loyalty app changed that overnight.</strong> Every scan tells McDonald's who you are, what you order, when, and which deal pulls you back.</p>
+  <div class="fact"><div class="num">~175M+</div><div class="txt">Loyalty app members (heading toward a target of <b>250 million</b> by 2027). It turned an anonymous cash business into a personal-data machine.</div></div>
+  <div class="fact"><div class="num">~$30B</div><div class="txt">Sales from loyalty members in a single year — and cheap, targeted deals to <em>you</em> replaced expensive mass advertising to everyone.</div></div>
+
+  <h2>AI moving into the restaurant</h2>
+  <ul class="pts">
+    <li><b>Drive-thru voice ordering</b> — an early test with IBM (2021) struggled with accents and noise and got shut off in 2024; McDonald's still says voice is the future and is picking a new partner.</li>
+    <li><b>A big Google Cloud deal (2023)</b> to put AI and "edge computing" into <b>~43,000 restaurants</b> — so each store can run AI locally, even on weak internet.</li>
+    <li><b>"Ask Pickles"</b> — an AI assistant for crew that answers questions from 180,000 pages of manuals, in 32 languages.</li>
+    <li><b>Predictive maintenance</b> — sensors that warn before the fryer (or the famously broken ice-cream machine) fails.</li>
+    <li><b>Cameras</b> that check your order is assembled right before handoff.</li>
+  </ul>
+
+  <h2>Why it matters</h2>
+  <p>Each restaurant becomes a <strong>mini data center</strong> — decisions happen instantly, in a business measured in seconds. The same digital menus and app let McDonald's <em>personalize deals and prices</em> — a discount to fill a slow afternoon, a nudge to add a drink — small percentage gains multiplied across tens of billions in sales.</p>
+
+  <h2>The main worry</h2>
+  <div class="big warn">
+    <div class="lbl">The single biggest risk</div>
+    <p><strong>Execution.</strong> Its flashiest AI project — the drive-thru voice bot — flopped publicly and got switched off. Franchisees grumble about paying for tech that doesn't clearly boost sales. And there's a <em>privacy/pricing landmine</em>: when a rival floated "dynamic pricing," customers heard "surge pricing" and revolted — a warning for any chain whose menu prices can move.</p>
+  </div>
+
+  <h2>The surprising part</h2>
+  <p>A company famous for cheap burgers is really <strong>one of the world's largest consumer-data operations.</strong> For decades the person at the counter forgot you the second you left. Today the app remembers everything — and increasingly an AI in the building, not a human, decides what to offer you and whether your order is right.</p>
+
+  <h2>In one sentence</h2>
+  <div class="big">
+    <div class="lbl">McDonald's in a nutshell</div>
+    <p>The burger chain became a data-and-AI company: an app that knows its customers, and AI wiring up 40,000 restaurants. The catch is pulling it off without fumbling the tech or spooking customers on price.</p>
+  </div>
+
+  <footer>
+    Group F · Old-school companies that are really tech now. Next: <a href="walmart.html">Walmart — an ad-and-data company →</a><br><br>
+    <a href="index.html">← back to all companies</a> · Figures from McDonald's 2024 results and 2023–2024 press.
+  </footer>
+</div>
+</body>
+</html>

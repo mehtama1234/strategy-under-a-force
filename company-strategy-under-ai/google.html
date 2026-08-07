@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Google — best tech, biggest trap</title>
+<style>
+:root{--g0:#0d1117;--g1:#11161e;--g2:#161c26;--g3:#1c2330;--line:#272f3d;--line2:#1e2635;
+--ink:#e8e3d8;--ink2:#b8c0cc;--ink3:#7a8494;--teal:#3ec9b6;--orange:#e09858;--gold:#c9a84c;--red:#d97a6c;--blue:#6c9fd9;
+--serif:Palatino,"Palatino Linotype","Book Antiqua",Charter,Georgia,serif;--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--g0);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.75;-webkit-font-smoothing:antialiased}
+.wrap{max-width:800px;margin:0 auto;padding:0 clamp(22px,5vw,60px) 100px}
+a{color:var(--teal);text-underline-offset:3px}
+.pagenav{display:flex;gap:6px;flex-wrap:wrap;padding:22px 0 4px}
+.pagenav a{font-family:var(--mono);font-size:.64rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink3);text-decoration:none;padding:4px 10px;border:1px solid var(--line2);border-radius:20px}
+.pagenav a:hover,.pagenav a.cur{color:var(--teal);border-color:var(--teal)}
+.hero{padding:34px 0 26px;border-bottom:1px solid var(--line)}
+.hero .eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+.hero h1{font-size:clamp(1.9rem,5vw,2.7rem);font-weight:700;line-height:1.09;color:var(--ink);letter-spacing:-.02em;text-wrap:balance;margin-bottom:.35em}
+.hero .sub{font-size:1.12rem;color:var(--ink2);font-style:italic}
+h2{font-size:1.5rem;font-weight:600;color:var(--ink);margin:2.3em 0 .5em;padding-top:1.3em;border-top:1px solid var(--line2);line-height:1.15}
+h2:first-of-type{border-top:none;margin-top:1.5em}
+p{color:var(--ink2);margin-bottom:1.05em}
+strong{color:var(--ink);font-weight:600}
+em{color:var(--gold);font-style:italic}
+.lede{font-size:1.13rem;color:var(--ink);line-height:1.7}
+.big{background:var(--g2);border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:0 10px 10px 0;padding:18px 22px;margin:1.5em 0}
+.big .lbl{font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+.big p{color:var(--ink);font-size:1.08rem;margin:0}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:1.3em 0;font-size:.95rem}
+.flow .b{background:var(--g2);border:1px solid var(--line);border-radius:8px;padding:8px 12px;color:var(--ink2)}
+.flow .b b{color:var(--ink)}
+.flow .ar{color:var(--ink3)}
+.flow.bad .b{border-color:rgba(217,122,108,.4)}
+.note{background:var(--g1);border:1px solid var(--line2);border-radius:8px;padding:12px 16px;margin:1.2em 0;font-size:.92rem;color:var(--ink3)}
+.note strong{color:var(--ink2)}
+footer{padding:40px 0;color:var(--ink3);font-family:var(--mono);font-size:.72rem;border-top:1px solid var(--line2);margin-top:2.5em;line-height:1.9}
+footer a{color:var(--teal);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="pagenav">
+    <a href="index.html">Overview</a>
+    <a href="amazon.html">Amazon</a>
+    <a href="microsoft.html">Microsoft</a>
+    <a href="google.html" class="cur">Google</a>
+    <a href="cadence.html">Cadence</a>
+  </nav>
+
+  <header class="hero">
+    <div class="eyebrow">Company · 3 of 4</div>
+    <h1>Google — best tech, biggest trap</h1>
+    <div class="sub">It has the strongest AI of the three. And the most to lose from it.</div>
+  </header>
+
+  <p class="lede">Google is the only one of these companies that owns <strong>everything</strong> it needs for AI: its own AI model (Gemini), its own chips, its own cloud, and the best AI research lab in the world. On raw technology, it's ahead. But it also has a trap the others don't.</p>
+
+  <h2>Why its technology is the strongest</h2>
+  <p>The others each rent or borrow a key piece. Google owns them all:</p>
+  <ul style="list-style:none;margin:1em 0">
+    <li style="padding:6px 0;border-bottom:1px solid var(--line2)"><strong>Its own AI model</strong> (Gemini) — it didn't have to partner with anyone.</li>
+    <li style="padding:6px 0;border-bottom:1px solid var(--line2)"><strong>Its own chips</strong> (called TPUs), which it's been building longer than anyone — so it doesn't depend on Nvidia.</li>
+    <li style="padding:6px 0;border-bottom:1px solid var(--line2)"><strong>Its own cloud</strong> to sell it all through.</li>
+    <li style="padding:6px 0"><strong>The best research lab</strong> (DeepMind) — the one that won a Nobel Prize for AI work.</li>
+  </ul>
+  <p>Owning both the AI model <em>and</em> the chips is a special advantage: Google can design them to fit each other perfectly, which nobody else can do as well. (Even Anthropic now rents a huge batch of Google's chips.)</p>
+
+  <h2>The trap: AI threatens its own money machine</h2>
+  <p>Here's the problem no rival has. Google makes almost all its money from <strong>search ads</strong>. The old way works like this:</p>
+  <div class="flow"><span class="b">you search</span><span class="ar">→</span><span class="b">you see a page of links <b>and ads</b></span><span class="ar">→</span><span class="b">you click</span><span class="ar">→</span><span class="b"><b>Google gets paid</b></span></div>
+  <p>But AI can just <em>answer</em> your question directly. Then:</p>
+  <div class="flow bad"><span class="b">you ask</span><span class="ar">→</span><span class="b">AI gives one answer</span><span class="ar">→</span><span class="b">you don't click</span><span class="ar">→</span><span class="b"><b>fewer ads, less money</b></span></div>
+  <div class="big" style="border-left-color:var(--orange)">
+    <div class="lbl" style="color:var(--orange)">The trap in one line</div>
+    <p>The very AI that Google is best at could <strong>shrink its own main business.</strong> Amazon's store and Microsoft's apps get <em>better</em> with AI. Google's search ads could get <em>eaten</em> by AI. That's its unique risk.</p>
+  </div>
+
+  <h2>Google's plan, and how it's going</h2>
+  <p>Google's answer is to put AI <em>inside</em> Search itself (so the answer still shows up on a Google page with ads nearby), and to grow its cloud business to make up any difference. So far, its ad money is <strong>still growing.</strong> Two more things going its way: it <strong>won a big antitrust case</strong> (it won't be broken up), and unlike Amazon it's <strong>still bringing in more cash than it spends.</strong></p>
+  <p>The big open question it can't fully answer: does an AI answer make <em>as much money</em> as the old links-and-ads page? Google says roughly yes. Nobody outside can check — it's a number Google will probably never fully show.</p>
+  <div class="note"><strong>Small correction we caught:</strong> while checking, the Amazon write-up claimed Google's cloud grew 82%. The real figure is about 30–34%. Fixed.</div>
+
+  <h2>The one-line summary</h2>
+  <div class="big">
+    <div class="lbl">Google in a sentence</div>
+    <p>It has the best AI technology of the three — but it's also the only one whose main money-maker (search ads) is the thing AI most directly threatens. Best toolkit, hardest trap. The race is whether its new AI businesses grow faster than AI eats the old one.</p>
+  </div>
+
+  <footer>
+    Next: <a href="cadence.html">Cadence — selling results, not tools →</a><br><br>
+    Full source-checked write-up: <a href="google-ai-strategy-research/">google-ai-strategy-research/</a>
+  </footer>
+</div>
+</body>
+</html>
