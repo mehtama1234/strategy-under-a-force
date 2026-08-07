@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Subsidy-Harvesting Machine — when the government check is the business</title>
+<style>
+:root{
+  --g0:#0d1117;--g1:#11161e;--g2:#161c26;--g3:#1c2330;--line:#272f3d;--line2:#1e2635;
+  --ink:#e8e3d8;--ink2:#b8c0cc;--ink3:#7a8494;
+  --teal:#3ec9b6;--orange:#e09858;--gold:#c9a84c;--red:#d97a6c;--blue:#6c9fd9;--purple:#a98cd9;--green:#7bbf6a;
+  --serif:Palatino,"Palatino Linotype","Book Antiqua",Charter,Georgia,serif;--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--g0);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 clamp(22px,5vw,60px) 100px}
+a{color:var(--gold);text-underline-offset:3px}
+.top{padding:26px 0 6px;display:flex;gap:14px;flex-wrap:wrap}
+.back{font-family:var(--mono);font-size:.72rem;color:var(--ink3);text-decoration:none}.back:hover{color:var(--gold)}
+.hero{padding:38px 0 26px;border-bottom:1px solid var(--line)}
+.hero .eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:700;line-height:1.08;color:var(--ink);letter-spacing:-.02em;text-wrap:balance;margin-bottom:.35em}
+.hero .sub{font-size:1.14rem;color:var(--ink2);font-style:italic}
+.lede{font-size:1.13rem;color:var(--ink);line-height:1.7;margin:1.4em 0}
+.big{background:var(--g2);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:18px 22px;margin:1.5em 0}
+.big .lbl{font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.big p{color:var(--ink);font-size:1.06rem;margin:0}
+.seed{background:var(--g1);border:1px solid var(--line2);border-radius:10px;padding:13px 17px;margin:1.3em 0;font-size:.95rem;color:var(--ink2)}
+.seed b{color:var(--ink)}.seed .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px}
+.sec{margin:2.6em 0 0}
+.sec-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding-top:1.4em;border-top:1px solid var(--line2);margin-bottom:2px}
+.sec-h .tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 9px;border-radius:20px;border:1px solid}
+.sec-h h2{font-size:1.5rem;font-weight:600;color:var(--ink);line-height:1.15}
+.sec-sub{color:var(--ink3);font-size:.98rem;margin:.2em 0 1em}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:1em 0}
+@media(max-width:620px){.cards{grid-template-columns:1fr}}
+.card{background:var(--g1);border:1px solid var(--line2);border-radius:11px;padding:15px 16px;border-left:3px solid;text-decoration:none;display:block;transition:transform .13s,border-color .13s}
+.card:hover{transform:translateY(-2px)}
+.card .co{font-size:1.08rem;color:var(--ink);font-weight:700}
+.card .one{font-size:.92rem;color:var(--ink2);margin:.25em 0 .5em;font-style:italic;line-height:1.4}
+.card .risk{font-family:var(--mono);font-size:.64rem;letter-spacing:.04em;color:var(--ink3)}
+.card .risk b{color:var(--ink);font-family:var(--serif);font-style:normal;font-weight:600;font-size:.92rem}
+.a1 .tag{color:var(--red);border-color:var(--red)} .a1 .card{border-left-color:var(--red)}
+.a2 .tag{color:var(--green);border-color:var(--green)} .a2 .card{border-left-color:var(--green)}
+.a3 .tag{color:var(--blue);border-color:var(--blue)} .a3 .card{border-left-color:var(--blue)}
+.a4 .tag{color:var(--purple);border-color:var(--purple)} .a4 .card{border-left-color:var(--purple)}
+.a5 .tag{color:var(--gold);border-color:var(--gold)} .a5 .card{border-left-color:var(--gold)}
+footer{padding:44px 0 40px;color:var(--ink3);font-family:var(--mono);font-size:.72rem;border-top:1px solid var(--line2);margin-top:3em;line-height:1.9}
+footer a{color:var(--gold);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="back" href="../index.html">★ all forces</a><a class="back" href="../the-energy-transition/index.html">Energy Transition</a><a class="back" href="../selling-to-the-state/index.html">Selling to the State</a><a class="back" href="../the-great-rebuild/index.html">The Great Rebuild</a></div>
+
+  <header class="hero">
+    <div class="eyebrow">A collection · plain English · 2026</div>
+    <h1>The Subsidy-Harvesting Machine</h1>
+    <div class="sub">The visible product is the front — the real margin is the government check.</div>
+  </header>
+
+  <p class="lede">The 49th force. A whole class of businesses is designed to capture public incentives rather than to serve customers: EV and clean-energy credits, solar tax equity, carbon offsets, place-based deals (opportunity zones, film and factory tax breaks), for-profit-college federal aid, and R&amp;D and pandemic-era credit "mills." And a supporting industry — tax-credit brokers, tax-equity banks, consultants, and lobbyists — exists just to harvest it. The one idea: <em>for these businesses the product isn't the business, the subsidy is — so they design the product to capture the check, and a whole ecosystem skims a cut at every step between the taxpayer and the goal.</em></p>
+
+  <div class="seed">
+    <span class="k">A fresh mechanism (Tier-7)</span>
+    Not from the Inc. 5000 taxonomy — surfaced by a Haiku discovery-scout pass for genuinely new hidden-mechanism business models. The lens: the government incentive, not the customer, as the real profit engine.
+  </div>
+
+  <div class="big">
+    <div class="lbl">The one question, asked of everyone</div>
+    <p>What did subsidy-harvesting make <em>scarce, cheap, safe, risky, or newly worth money</em>? The ability to navigate and monetize an incentive became the scarce, valuable skill — the broker, the tax-equity bank, the consultant, the lobbyist; the government quietly became the real customer; and a product that loses money on its own became profitable once the credit was added. The danger: subsidies are political, so a business whose margin is the subsidy is one election from collapse — as the 2025–26 IRA and EV-credit rollback showed.</p>
+  </div>
+
+  <p style="text-align:center;margin:1.7em 0"><a href="patterns.html" style="display:inline-block;font-family:var(--mono);font-size:.8rem;letter-spacing:.03em;color:var(--gold);border:1px solid var(--gold);border-radius:24px;padding:10px 22px;text-decoration:none">★ The patterns — what repeats across all 13 &nbsp;→</a></p>
+
+  <section class="sec a1">
+    <div class="sec-h"><span class="tag">Group A</span><h2>Where the subsidy IS the business</h2></div>
+    <div class="sec-sub">Products whose economics run on the check.</div>
+    <div class="cards">
+      <a class="card" href="ev-and-clean-energy-credits.html"><div class="co">EV &amp; clean-energy credits</div><div class="one">Tesla's profit WAS the credits it sold.</div><div class="risk">Worry: <b>repealed overnight (2025)</b></div></a>
+      <a class="card" href="solar-and-tax-equity.html"><div class="co">Solar &amp; tax equity</div><div class="one">The real customer is a bank's tax bill.</div><div class="risk">Worry: <b>a tiny investor pool</b></div></a>
+      <a class="card" href="carbon-credits-and-offsets.html"><div class="co">Carbon credits &amp; offsets</div><div class="one">A commodity you can't see or verify.</div><div class="risk">Worry: <b>much of it is phantom</b></div></a>
+    </div>
+  </section>
+
+  <section class="sec a2">
+    <div class="sec-h"><span class="tag">Group B</span><h2>The subsidy-capture playbooks</h2></div>
+    <div class="sec-sub">Design the business around the incentive.</div>
+    <div class="cards">
+      <a class="card" href="place-based-incentives.html"><div class="co">Place-based incentives</div><div class="one">Pit cities against each other for the deal.</div><div class="risk">Worry: <b>taxpayers lose the bet</b></div></a>
+      <a class="card" href="the-education-subsidy.html"><div class="co">The education subsidy</div><div class="one">The real customer was the federal loan.</div><div class="risk">Worry: <b>students left with debt</b></div></a>
+      <a class="card" href="the-credit-mills.html"><div class="co">The credit mills</div><div class="one">An industry to over-claim one credit.</div><div class="risk">Worry: <b>clawbacks land on you</b></div></a>
+    </div>
+  </section>
+
+  <section class="sec a3">
+    <div class="sec-h"><span class="tag">Group C</span><h2>The plumbing</h2></div>
+    <div class="sec-sub">The middlemen who monetize and shape the credit.</div>
+    <div class="cards">
+      <a class="card" href="tax-credit-brokers.html"><div class="co">Tax-credit brokers</div><div class="one">A $30B market appeared in two years.</div><div class="risk">Worry: <b>rests on the credit surviving</b></div></a>
+      <a class="card" href="the-tax-equity-financiers.html"><div class="co">The tax-equity financiers</div><div class="one">Banks build housing to cut their taxes.</div><div class="risk">Worry: <b>hostage to the credit</b></div></a>
+      <a class="card" href="the-incentive-lobby.html"><div class="co">The incentive lobby</div><div class="one">Help write the rule you'll collect.</div><div class="risk">Worry: <b>capture &amp; hard to remove</b></div></a>
+    </div>
+  </section>
+
+  <section class="sec a4">
+    <div class="sec-h"><span class="tag">Group D</span><h2>The mechanism &amp; the tensions</h2></div>
+    <div class="sec-sub">Why it works, who profits, and where it breaks.</div>
+    <div class="cards">
+      <a class="card" href="why-the-subsidy-is-the-margin.html"><div class="co">Why the subsidy is the margin</div><div class="one">Chase the credit, not the customer.</div><div class="risk">Worry: <b>fragile &amp; misallocated</b></div></a>
+      <a class="card" href="who-profits.html"><div class="co">Who profits</div><div class="one">A cut is skimmed at every step.</div><div class="risk">Worry: <b>little reaches the goal</b></div></a>
+      <a class="card" href="the-limits.html"><div class="co">The limits</div><div class="one">One election from collapse.</div><div class="risk">Worry: <b>reversal, waste, fraud</b></div></a>
+    </div>
+  </section>
+
+  <section class="sec a5">
+    <div class="sec-h"><span class="tag">Group E</span><h2>The big picture</h2></div>
+    <div class="sec-sub">The whole force in one place.</div>
+    <div class="cards">
+      <a class="card" href="the-subsidy-harvesting-machine.html"><div class="co">The subsidy-harvesting machine</div><div class="one">The government is the real customer.</div><div class="risk">Worry: <b>a signature away from zero</b></div></a>
+    </div>
+  </section>
+
+  <footer>
+    Plain English, research-checked (research run on Haiku, direct — no sub-agents). A Tier-7 mechanism from a fresh discovery-scout pass.<br><br>
+    Part of a series: <a href="../index.html">★ all forces</a> · <a href="../the-energy-transition/index.html">Energy Transition</a> · <a href="../selling-to-the-state/index.html">Selling to the State</a> · <a href="../the-great-rebuild/index.html">The Great Rebuild</a>
+  </footer>
+</div>
+</body>
+</html>
