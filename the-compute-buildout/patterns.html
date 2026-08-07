@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The patterns — what repeats across "The Compute Build-Out"</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+.wrap{max-width:820px}
+.hero .eyebrow{color:var(--gold)}
+.pat{background:var(--g1);border:1px solid var(--line2);border-radius:12px;padding:18px 20px;margin:16px 0;border-left:3px solid var(--gold)}
+.pat .n{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;color:var(--ink3);text-transform:uppercase}
+.pat h3{font-size:1.22rem;color:var(--ink);font-weight:600;margin:.15em 0 .5em;line-height:1.2}
+.pat p{font-size:1rem;margin:0 0 .8em}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.chips a{font-family:var(--mono);font-size:.66rem;color:var(--ink2);text-decoration:none;background:var(--g3);border:1px solid var(--line);border-radius:20px;padding:3px 10px}
+.chips a:hover{color:var(--gold);border-color:var(--gold)}
+.tier{border:1px solid var(--line2);border-radius:12px;padding:16px 18px;margin:14px 0;border-top:3px solid}
+.tier.win{border-top-color:var(--green)}.tier.exp{border-top-color:var(--red)}
+.tier .h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:.5em}
+.tier .h b{font-size:1.1rem;color:var(--ink)}
+.tier .h .k{font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;text-transform:uppercase}
+.tier.win .k{color:var(--green)}.tier.exp .k{color:var(--red)}
+.tier p{font-size:.95rem;margin:0 0 .7em}
+h2{font-size:1.55rem}
+</style>
+</head>
+<body class="acc-gold">
+<div class="wrap">
+  <div class="top"><a href="index.html">← all 13</a><a href="../index.html">★ all forces</a><a href="../the-great-rebuild/patterns.html">The Great Rebuild</a><a href="../the-energy-transition/patterns.html">Energy Transition</a></div>
+  <header class="hero">
+    <div class="eyebrow">The synthesis · what repeats across all 13</div>
+    <h1>The patterns</h1>
+    <div class="sub">Line up every corner of the AI build-out — data centers, power, chips, memory, neoclouds, the capex loop — and the same handful of mechanics repeat, all flowing from one fact: AI made compute the scarce thing.</div>
+  </header>
+  <p class="lede">Each page asks: <em>what did the compute build-out make scarce, cheap, safe, risky, or newly valuable?</em> Thirteen answers later, the same tensions repeat.</p>
+
+  <div class="big"><div class="lbl">The one thing to take away</div><p>For fifty years computing got cheaper every year, so software scaled almost for free. AI reversed it: models need so much compute that <strong>chips, power, and concrete became the bottleneck to the software revolution.</strong> So the profit moved to whoever owns the scarce physical inputs — the chip, the gigawatt, the building — while the model-makers spend fortunes betting the economics eventually close. The whole thing is a race between falling cost-per-token and rising spend, and nobody yet knows which wins.</p></div>
+
+  <h2>The recurring patterns</h2>
+
+  <div class="pat"><div class="n">Pattern 01</div><h3>Atoms strike back at bits</h3><p>The most abstract industry on earth turned out to be gated by the most physical things: silicon, megawatts, water, concrete.</p><div class="chips"><a href="the-data-center-boom.html">concrete</a><a href="why-compute-became-scarce.html">the reversal</a></div></div>
+
+  <div class="pat"><div class="n">Pattern 02</div><h3>The bottleneck keeps moving down the stack</h3><p>From chips to power to cooling to transformers — solve one scarce input and the constraint jumps to the next physical thing.</p><div class="chips"><a href="the-power-crunch.html">power</a><a href="cooling-and-the-plant.html">heat</a></div></div>
+
+  <div class="pat"><div class="n">Pattern 03</div><h3>Own the scarce input, tax the whole industry</h3><p>Nvidia, the memory makers, the power and cooling vendors each sit on a bottleneck and collect a toll every time AI grows.</p><div class="chips"><a href="the-gpu-chokehold.html">the chip</a><a href="the-picks-and-shovels.html">the glue</a></div></div>
+
+  <div class="pat"><div class="n">Pattern 04</div><h3>Sell shovels; the miners may not strike gold</h3><p>The sure money is the infrastructure layer; the AI apps spending that money often lose on every query — the 1849 pattern.</p><div class="chips"><a href="who-profits.html">the shovels</a><a href="inference-economics.html">the miners</a></div></div>
+
+  <div class="pat"><div class="n">Pattern 05</div><h3>The software is the real moat, not the hardware</h3><p>Cheaper, faster rival chips still lose because CUDA's decade of tools and trained engineers is too deep to cross.</p><div class="chips"><a href="the-gpu-chokehold.html">CUDA lock-in</a></div></div>
+
+  <div class="pat"><div class="n">Pattern 06</div><h3>The boom increasingly funds itself</h3><p>Money loops — investor, customer, and supplier are the same firms — so demand can look real until it needs outside revenue to close.</p><div class="chips"><a href="the-capex-supercycle.html">circular financing</a><a href="the-neoclouds.html">vendor-financed</a></div></div>
+
+  <div class="pat"><div class="n">Pattern 07</div><h3>Borrowing against assets that decay</h3><p>GPUs lose ~30% a year, yet billions of debt are secured against them — the collateral expires under the loan.</p><div class="chips"><a href="the-neoclouds.html">GPU-backed debt</a><a href="the-limits.html">depreciation</a></div></div>
+
+  <div class="pat"><div class="n">Pattern 08</div><h3>Progress is the danger</h3><p>A breakthrough that makes AI cheaper would puncture the build-out — because the whole thing is priced for scarcity.</p><div class="chips"><a href="the-limits.html">the efficiency shock</a><a href="inference-economics.html">10x/year</a></div></div>
+
+  <h2>Who wins and who pays</h2>
+  <div class="tier win"><div class="h"><span class="k">Winning</span><b>whoever owns the scarce physical input</b></div><p>Nvidia and TSMC, the memory and networking suppliers, the power and cooling vendors, the data-center landlords — and whoever locks up gigawatts of electricity.</p><div class="chips"><a href="the-gpu-chokehold.html">Nvidia</a><a href="the-power-crunch.html">power</a><a href="who-profits.html">the pipeline</a></div></div>
+  <div class="tier exp"><div class="h"><span class="k">Who pays</span><b>the app layer, the over-levered, the late</b></div><p>Money-losing AI apps that can't cover compute, neoclouds levered on decaying chips, and late-cycle overbuilders left with dark capacity.</p><div class="chips"><a href="inference-economics.html">the apps</a><a href="the-neoclouds.html">the levered</a></div></div>
+
+  <h2>Forty forces, one method</h2>
+  <div class="big"><div class="lbl">The point of the series</div><p>This is the 40th collection — Tier-4, <b>seeded by the Inc. 5000 data</b> (AI Infrastructure &amp; Tooling is a top fast-growing theme). It's the digital half of <a href="../the-great-rebuild/index.html">the great rebuild</a> (both bottleneck on power and construction), it collides directly with <a href="../the-energy-transition/index.html">the energy transition</a> (AI is the new demand shock on the grid), its toll-taker chips echo <a href="../the-toll-booth-economy/index.html">the toll-booth economy</a>, and it's the supply side of <a href="../company-strategy-under-ai/index.html">company strategy under AI</a>. Same method every time: pick a force, ask what it made scarce/cheap/risky/valuable, group by the answer, read the patterns.</p></div>
+
+  <footer>Drawn from all 13 write-ups. <a href="index.html">← back to all 13</a> · <a href="../index.html">★ all forces</a> · <a href="../the-great-rebuild/index.html">The Great Rebuild</a><br><br>Research run on Haiku (direct, no sub-agents). Seeded by the Inc. 5000 analysis.</footer>
+</div>
+</body>
+</html>

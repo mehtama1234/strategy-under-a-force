@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Compute Build-Out — when AI made computing the scarce thing</title>
+<style>
+:root{
+  --g0:#0d1117;--g1:#11161e;--g2:#161c26;--g3:#1c2330;--line:#272f3d;--line2:#1e2635;
+  --ink:#e8e3d8;--ink2:#b8c0cc;--ink3:#7a8494;
+  --teal:#3ec9b6;--orange:#e09858;--gold:#c9a84c;--red:#d97a6c;--blue:#6c9fd9;--purple:#a98cd9;--green:#7bbf6a;
+  --serif:Palatino,"Palatino Linotype","Book Antiqua",Charter,Georgia,serif;--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--g0);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 clamp(22px,5vw,60px) 100px}
+a{color:var(--purple);text-underline-offset:3px}
+.top{padding:26px 0 6px;display:flex;gap:14px;flex-wrap:wrap}
+.back{font-family:var(--mono);font-size:.72rem;color:var(--ink3);text-decoration:none}.back:hover{color:var(--purple)}
+.hero{padding:38px 0 26px;border-bottom:1px solid var(--line)}
+.hero .eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--purple);margin-bottom:14px}
+.hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:700;line-height:1.08;color:var(--ink);letter-spacing:-.02em;text-wrap:balance;margin-bottom:.35em}
+.hero .sub{font-size:1.14rem;color:var(--ink2);font-style:italic}
+.lede{font-size:1.13rem;color:var(--ink);line-height:1.7;margin:1.4em 0}
+.big{background:var(--g2);border:1px solid var(--line);border-left:4px solid var(--purple);border-radius:0 10px 10px 0;padding:18px 22px;margin:1.5em 0}
+.big .lbl{font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);margin-bottom:8px}
+.big p{color:var(--ink);font-size:1.06rem;margin:0}
+.seed{background:var(--g1);border:1px solid var(--line2);border-radius:10px;padding:13px 17px;margin:1.3em 0;font-size:.95rem;color:var(--ink2)}
+.seed b{color:var(--ink)}.seed .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);display:block;margin-bottom:5px}
+.sec{margin:2.6em 0 0}
+.sec-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding-top:1.4em;border-top:1px solid var(--line2);margin-bottom:2px}
+.sec-h .tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 9px;border-radius:20px;border:1px solid}
+.sec-h h2{font-size:1.5rem;font-weight:600;color:var(--ink);line-height:1.15}
+.sec-sub{color:var(--ink3);font-size:.98rem;margin:.2em 0 1em}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:1em 0}
+@media(max-width:620px){.cards{grid-template-columns:1fr}}
+.card{background:var(--g1);border:1px solid var(--line2);border-radius:11px;padding:15px 16px;border-left:3px solid;text-decoration:none;display:block;transition:transform .13s,border-color .13s}
+.card:hover{transform:translateY(-2px)}
+.card .co{font-size:1.08rem;color:var(--ink);font-weight:700}
+.card .one{font-size:.92rem;color:var(--ink2);margin:.25em 0 .5em;font-style:italic;line-height:1.4}
+.card .risk{font-family:var(--mono);font-size:.64rem;letter-spacing:.04em;color:var(--ink3)}
+.card .risk b{color:var(--ink);font-family:var(--serif);font-style:normal;font-weight:600;font-size:.92rem}
+.a1 .tag{color:var(--red);border-color:var(--red)} .a1 .card{border-left-color:var(--red)}
+.a2 .tag{color:var(--green);border-color:var(--green)} .a2 .card{border-left-color:var(--green)}
+.a3 .tag{color:var(--blue);border-color:var(--blue)} .a3 .card{border-left-color:var(--blue)}
+.a4 .tag{color:var(--purple);border-color:var(--purple)} .a4 .card{border-left-color:var(--purple)}
+.a5 .tag{color:var(--gold);border-color:var(--gold)} .a5 .card{border-left-color:var(--gold)}
+footer{padding:44px 0 40px;color:var(--ink3);font-family:var(--mono);font-size:.72rem;border-top:1px solid var(--line2);margin-top:3em;line-height:1.9}
+footer a{color:var(--purple);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="back" href="../index.html">★ all forces</a><a class="back" href="../the-great-rebuild/index.html">The Great Rebuild</a><a class="back" href="../the-energy-transition/index.html">Energy Transition</a><a class="back" href="../company-strategy-under-ai/index.html">Strategy Under AI</a></div>
+
+  <header class="hero">
+    <div class="eyebrow">A collection · plain English · 2026</div>
+    <h1>The Compute Build-Out</h1>
+    <div class="sub">AI made raw computing power the scarce thing — so the software revolution now bottlenecks on chips, power, and concrete.</div>
+  </header>
+
+  <p class="lede">The 40th force. For fifty years computing got cheaper and more abundant every year, so software could scale almost for free. AI broke that. Training and running models needs staggering amounts of specialized chips, giant buildings to hold them, and electricity and cooling on a scale the grid was never built for. Suddenly the bottleneck to the software revolution is physical — silicon, copper, megawatts, water — and the money pools with whoever owns those scarce inputs while the model-makers spend fortunes betting the economics eventually close. The one idea: <em>when compute became scarce, the profit moved to whoever owns the chip, the power, and the building.</em></p>
+
+  <div class="seed">
+    <span class="k">Seeded by the Inc. 5000 data</span>
+    "AI Infrastructure &amp; Tooling" is a <b>top fast-growing theme</b> — 575 companies, ~$31.5B represented — and the GPU shortage and data-center power crunch run through the whole list. This collection follows that money.
+  </div>
+
+  <div class="big">
+    <div class="lbl">The one question, asked of everyone</div>
+    <p>What did the compute build-out make <em>scarce, cheap, safe, risky, or newly worth money</em>? The GPU, the gigawatt, and the data-center building became the scarce things; the picks-and-shovels suppliers (memory, cooling, power) became quiet giants; and cheap, abundant computing became a memory. The danger: the spend is hundreds of billions ahead of AI revenue, the financing is increasingly circular, and the chips everyone's borrowing against lose a third of their value every year.</p>
+  </div>
+
+  <p style="text-align:center;margin:1.7em 0"><a href="patterns.html" style="display:inline-block;font-family:var(--mono);font-size:.8rem;letter-spacing:.03em;color:var(--gold);border:1px solid var(--gold);border-radius:24px;padding:10px 22px;text-decoration:none">★ The patterns — what repeats across all 13 &nbsp;→</a></p>
+
+  <section class="sec a1">
+    <div class="sec-h"><span class="tag">Group A</span><h2>The physical build-out</h2></div>
+    <div class="sec-sub">The software revolution ran into concrete, megawatts, and heat.</div>
+    <div class="cards">
+      <a class="card" href="the-data-center-boom.html"><div class="co">The data-center boom</div><div class="one">The biggest building spree in tech history.</div><div class="risk">Worry: <b>overbuilding if AI stalls</b></div></a>
+      <a class="card" href="the-power-crunch.html"><div class="co">The power crunch</div><div class="one">AI's real bottleneck is electricity.</div><div class="risk">Worry: <b>the grid can't scale</b></div></a>
+      <a class="card" href="cooling-and-the-plant.html"><div class="co">Cooling &amp; the plant</div><div class="one">Getting the heat out is the hard part.</div><div class="risk">Worry: <b>tied to the build-out</b></div></a>
+    </div>
+  </section>
+
+  <section class="sec a2">
+    <div class="sec-h"><span class="tag">Group B</span><h2>The silicon &amp; the toll</h2></div>
+    <div class="sec-sub">Every model runs through a few scarce suppliers.</div>
+    <div class="cards">
+      <a class="card" href="the-gpu-chokehold.html"><div class="co">The GPU chokehold</div><div class="one">Nvidia became the toll-taker of AI.</div><div class="risk">Worry: <b>customers building chips</b></div></a>
+      <a class="card" href="the-picks-and-shovels.html"><div class="co">Picks &amp; shovels</div><div class="one">Memory, packaging, and networking bottlenecks.</div><div class="risk">Worry: <b>a cyclical bust</b></div></a>
+      <a class="card" href="the-neoclouds.html"><div class="co">The neoclouds</div><div class="one">Renting out GPUs on borrowed money.</div><div class="risk">Worry: <b>debt on chips that decay</b></div></a>
+    </div>
+  </section>
+
+  <section class="sec a3">
+    <div class="sec-h"><span class="tag">Group C</span><h2>The money machine</h2></div>
+    <div class="sec-sub">The staggering spend, the loops it flows in, and who's buying.</div>
+    <div class="cards">
+      <a class="card" href="the-capex-supercycle.html"><div class="co">The capex super-cycle</div><div class="one">$700B a year — and circular financing.</div><div class="risk">Worry: <b>the loop can unwind</b></div></a>
+      <a class="card" href="inference-economics.html"><div class="co">Does it pay for itself?</div><div class="one">Training vs inference, spend vs revenue.</div><div class="risk">Worry: <b>the math may not close</b></div></a>
+      <a class="card" href="who-is-buying.html"><div class="co">Who's actually buying</div><div class="one">A few labs, some firms, and now nations.</div><div class="risk">Worry: <b>demand is concentrated</b></div></a>
+    </div>
+  </section>
+
+  <section class="sec a4">
+    <div class="sec-h"><span class="tag">Group D</span><h2>The mechanism &amp; the tensions</h2></div>
+    <div class="sec-sub">Why it happened, who profits, and where it breaks.</div>
+    <div class="cards">
+      <a class="card" href="why-compute-became-scarce.html"><div class="co">Why compute got scarce</div><div class="one">AI reversed 50 years of cheap computing.</div><div class="risk">Worry: <b>a scaling wall</b></div></a>
+      <a class="card" href="who-profits.html"><div class="co">Who profits</div><div class="one">Sell shovels; the miners may not strike gold.</div><div class="risk">Worry: <b>the app layer loses money</b></div></a>
+      <a class="card" href="the-limits.html"><div class="co">The limits</div><div class="one">The bubble, the power ceiling, the decay.</div><div class="risk">Worry: <b>an efficiency shock</b></div></a>
+    </div>
+  </section>
+
+  <section class="sec a5">
+    <div class="sec-h"><span class="tag">Group E</span><h2>The big picture</h2></div>
+    <div class="sec-sub">The whole force in one place.</div>
+    <div class="cards">
+      <a class="card" href="the-compute-buildout.html"><div class="co">The compute build-out</div><div class="one">Atoms strike back at the world of bits.</div><div class="risk">Worry: <b>spend ahead of revenue</b></div></a>
+    </div>
+  </section>
+
+  <footer>
+    Plain English, research-checked (research run on Haiku, direct — no sub-agents). Seeded by the Inc. 5000 fastest-growing-companies analysis.<br><br>
+    Part of a series: <a href="../index.html">★ all forces</a> · <a href="../the-great-rebuild/index.html">The Great Rebuild</a> · <a href="../the-energy-transition/index.html">Energy Transition</a> · <a href="../company-strategy-under-ai/index.html">Strategy Under AI</a>
+  </footer>
+</div>
+</body>
+</html>
