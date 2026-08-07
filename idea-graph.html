@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Idea Graph — how the 35 forces connect</title>
+<style>
+:root{
+  --g0:#0d1117;--g1:#11161e;--g2:#161c26;--g3:#1c2330;--line:#272f3d;--line2:#1e2635;
+  --ink:#e8e3d8;--ink2:#b8c0cc;--ink3:#7a8494;
+  --teal:#3ec9b6;--orange:#e09858;--gold:#c9a84c;--red:#d97a6c;--blue:#6c9fd9;--purple:#a98cd9;--green:#7bbf6a;
+  --serif:Palatino,"Palatino Linotype","Book Antiqua",Charter,Georgia,serif;--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--g0);color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 60px}
+a{color:var(--gold)}
+.top{padding:22px 0 6px;display:flex;gap:14px;flex-wrap:wrap}
+.top a{font-family:var(--mono);font-size:.72rem;color:var(--ink3);text-decoration:none}.top a:hover{color:var(--gold)}
+h1{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:700;letter-spacing:-.02em;margin:.5em 0 .1em;color:var(--ink)}
+.sub{font-size:1.05rem;color:var(--ink2);font-style:italic;max-width:720px;margin-bottom:.6em}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:.72rem;color:var(--ink2);margin:.8em 0}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.dot{width:11px;height:11px;border-radius:50%;display:inline-block}
+.hint{font-family:var(--mono);font-size:.68rem;color:var(--ink3);margin:.2em 0 1em}
+.stage{position:relative;background:radial-gradient(1200px 600px at 50% 40%,#121822,#0d1117);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+canvas{display:block;width:100%;height:auto;touch-action:none}
+#tip{position:absolute;pointer-events:none;background:var(--g2);border:1px solid var(--line);border-radius:9px;padding:8px 11px;font-size:.82rem;max-width:260px;color:var(--ink);box-shadow:0 6px 24px rgba(0,0,0,.5);opacity:0;transition:opacity .1s;z-index:5;line-height:1.4}
+#tip b{color:var(--gold)}
+footer{padding:34px 0;color:var(--ink3);font-family:var(--mono);font-size:.72rem;border-top:1px solid var(--line2);margin-top:2em;line-height:1.9}
+footer a{color:var(--gold);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a href="index.html">★ all 35 forces</a><a href="the-machine.html">← the machine behind all 35</a></div>
+  <h1>The idea graph</h1>
+  <div class="sub">Thirty-five forces, drawn as one web. Each line is a real link — one force feeds, explains, mirrors, or opposes another. Drag a node; hover a line to read why.</div>
+  <div class="legend">
+    <span><i class="dot" style="background:var(--orange)"></i> Macro forces</span>
+    <span><i class="dot" style="background:var(--teal)"></i> Hidden-mechanism business models</span>
+    <span><i class="dot" style="background:var(--gold)"></i> Structural patterns</span>
+  </div>
+  <div class="hint">Hover a node to spotlight its connections · click a node to open that collection · drag to rearrange.</div>
+  <div class="stage"><canvas id="cv"></canvas><div id="tip"></div></div>
+  <footer>Part of the <a href="index.html">Strategy Under a Force</a> capstone · connections mined on Haiku, laid out live in your browser.</footer>
+</div>
+<script>
+const F1="var(--orange)",F2="var(--teal)",F3="var(--gold)";
+const fam={orange:"#e09858",teal:"#3ec9b6",gold:"#c9a84c"};
+// node: [slug, label, family]
+const N=[
+["company-strategy-under-ai","AI",1],["ozempic-effect","Ozempic",1],["the-decoupling","Decoupling",1],
+["end-of-cheap-money","Cheap Money Ends",1],["the-energy-transition","Energy Transition",1],["the-demographic-cliff","Demographic Cliff",1],
+["the-climate-bill","Climate Bill",1],["the-attention-economy","Attention",1],["the-remote-shift","Remote Shift",1],
+["last-call","Last Call",1],["the-pet-economy","Pet Economy",1],["gambling-economy","Gambling",1],
+["insurance-retreat","Insurance Retreat",1],["water-critical-minerals","Water & Minerals",1],["private-credit-boom","Private Credit",1],
+["privacy-tech-data-dignity","Privacy Tech",1],["institutional-patience-running-out","Patience Runs Out",1],["reshoring-by-constraint","Reshoring",1],
+["the-loyalty-economy","Loyalty",2],["everyones-an-ad-business","Everyone's an Ad Biz",2],["everyones-a-bank","Everyone's a Bank",2],
+["the-toll-booth-economy","Toll Booth",2],["the-roll-up","The Roll-Up",2],["locked-in","Locked In",2],
+["store-is-the-brand","Store Is the Brand",2],["real-estate-is-the-moat","Real Estate Moat",2],["surveillance-data-as-product","Surveillance",2],
+["passive-investing","Passive Investing",2],["subscription-fatigue","Subscription Fatigue",2],["the-cohort-economy","Cohort Economy",2],
+["litigation-as-an-asset-class","Litigation Finance",2],
+["the-gatekeeper-tax","Gatekeeper Tax",3],["cost-disease","Cost Disease",3],["verification-tax","Verification Tax",3],["value-migration","Value Migration",3]
+];
+const E=[
+["company-strategy-under-ai","private-credit-boom","AI pushes yield-seeking money into shadow lending"],
+["company-strategy-under-ai","cost-disease","AI vs stubborn service-sector inflation"],
+["company-strategy-under-ai","verification-tax","when AI can fake anything, proving it real is the business"],
+["ozempic-effect","the-demographic-cliff","health & pharma reshape who spends"],
+["ozempic-effect","last-call","GLP-1 mutes cravings; the default drink stops being alcohol"],
+["the-decoupling","reshoring-by-constraint","the policy and its costly aftermath"],
+["the-decoupling","water-critical-minerals","the deep supply chain you can't decouple"],
+["end-of-cheap-money","private-credit-boom","rates rise; capital flees transparency for yield"],
+["end-of-cheap-money","the-roll-up","cheap-debt roll-ups meet the reckoning"],
+["end-of-cheap-money","institutional-patience-running-out","dear money discounts the distant future harder"],
+["the-energy-transition","water-critical-minerals","the transition has to be dug and refined"],
+["the-energy-transition","real-estate-is-the-moat","solar & wind make land an energy asset"],
+["the-energy-transition","reshoring-by-constraint","batteries & solar must be built somewhere"],
+["the-demographic-cliff","the-pet-economy","fewer kids; the pet became a child"],
+["the-demographic-cliff","institutional-patience-running-out","aging savers, shrinking patient capital"],
+["the-climate-bill","water-critical-minerals","climate spending drives the scramble for inputs"],
+["the-climate-bill","insurance-retreat","the physical bill, priced first by insurers"],
+["the-attention-economy","everyones-an-ad-business","attention is scarce, so everyone sells eyeballs"],
+["the-attention-economy","subscription-fatigue","people cancel a bill, not who they are"],
+["the-attention-economy","the-cohort-economy","attention saturates; belonging is the deeper moat"],
+["the-remote-shift","real-estate-is-the-moat","empty offices, land re-priced"],
+["last-call","the-pet-economy","the third place and the emotional spend shift"],
+["the-pet-economy","store-is-the-brand","premium private-label pet as the high-margin brand"],
+["gambling-economy","private-credit-boom","betting debt feeds subprime lending"],
+["gambling-economy","the-attention-economy","every screen a casino built on engagement"],
+["insurance-retreat","the-gatekeeper-tax","no insurance, no mortgage — a permission tripwire"],
+["insurance-retreat","litigation-as-an-asset-class","nuclear verdicts drive both"],
+["water-critical-minerals","surveillance-data-as-product","refine the ore vs refine the behavior"],
+["private-credit-boom","litigation-as-an-asset-class","same yield-hungry capital chasing uncorrelated returns"],
+["private-credit-boom","everyones-a-bank","non-banks became the lenders"],
+["privacy-tech-data-dignity","surveillance-data-as-product","the disease and its antibodies"],
+["institutional-patience-running-out","the-roll-up","impatient capital forces fast consolidation"],
+["institutional-patience-running-out","private-credit-boom","the same short-clock, yield-chasing capital"],
+["reshoring-by-constraint","the-gatekeeper-tax","tariffs & rules erect new permission tolls"],
+["the-loyalty-economy","the-cohort-economy","points vs belonging — you don't cancel identity"],
+["the-loyalty-economy","everyones-an-ad-business","first-party data: loyalty hook and ad target"],
+["the-loyalty-economy","store-is-the-brand","loyalty collapses into the retailer's membership"],
+["everyones-an-ad-business","surveillance-data-as-product","ad targeting runs on harvested behavior"],
+["everyones-a-bank","litigation-as-an-asset-class","financializing another everyday activity"],
+["the-toll-booth-economy","the-gatekeeper-tax","tax the transaction vs tax the permission"],
+["the-toll-booth-economy","locked-in","toll before the sale, lock-in after it"],
+["the-roll-up","locked-in","roll-ups gather boring, sticky, lock-in businesses"],
+["locked-in","subscription-fatigue","the refill is the business, until people revolt"],
+["store-is-the-brand","real-estate-is-the-moat","the shelf and the ground both flipped to assets"],
+["real-estate-is-the-moat","passive-investing","the same funds buy the moat-land"],
+["value-migration","cost-disease","profit flees the layers labor cost inflates"],
+["value-migration","the-toll-booth-economy","profit pools at the new bottleneck you can toll"],
+["verification-tax","the-gatekeeper-tax","both tax the right to transact"],
+["surveillance-data-as-product","the-cohort-economy","the tribe is also a targeting asset"],
+["passive-investing","institutional-patience-running-out","herd-speed flows replace patient owners"]
+];
+const cv=document.getElementById("cv"),ctx=cv.getContext("2d"),tip=document.getElementById("tip"),stage=cv.parentElement;
+let W=0,H=0,DPR=Math.max(1,Math.min(2,window.devicePixelRatio||1));
+const nodes=N.map((n,i)=>({slug:n[0],label:n[1],fam:n[2],x:0,y:0,vx:0,vy:0,deg:0}));
+const idx={}; nodes.forEach((n,i)=>idx[n.slug]=i);
+const edges=E.filter(e=>idx[e[0]]!=null&&idx[e[1]]!=null).map(e=>({a:idx[e[0]],b:idx[e[1]],r:e[2]}));
+edges.forEach(e=>{nodes[e.a].deg++;nodes[e.b].deg++});
+const col=n=>n.fam==1?fam.orange:n.fam==2?fam.teal:fam.gold;
+const rad=n=>6+Math.sqrt(n.deg)*2.6;
+function size(){W=stage.clientWidth;H=Math.max(460,Math.min(720,Math.round(W*0.62)));cv.width=W*DPR;cv.height=H*DPR;cv.style.height=H+"px";ctx.setTransform(DPR,0,0,DPR,0,0);}
+size();
+// seed positions in a circle by family cluster
+nodes.forEach((n,i)=>{const a=i/nodes.length*Math.PI*2;const rr=Math.min(W,H)*0.34;n.x=W/2+Math.cos(a)*rr*(0.7+0.3*((i%3)/2));n.y=H/2+Math.sin(a)*rr*(0.7+0.3*((i%2)));});
+let hover=-1,drag=-1,dragging=false;
+function tick(){
+  const cx=W/2,cy=H/2;
+  for(let i=0;i<nodes.length;i++){
+    const a=nodes[i];
+    for(let j=i+1;j<nodes.length;j++){
+      const b=nodes[j];let dx=a.x-b.x,dy=a.y-b.y,d2=dx*dx+dy*dy||0.01,d=Math.sqrt(d2);
+      const rep=2600/d2;const fx=dx/d*rep,fy=dy/d*rep;a.vx+=fx;a.vy+=fy;b.vx-=fx;b.vy-=fy;
+    }
+    a.vx+=(cx-a.x)*0.0016;a.vy+=(cy-a.y)*0.0016;
+  }
+  for(const e of edges){const a=nodes[e.a],b=nodes[e.b];let dx=b.x-a.x,dy=b.y-a.y,d=Math.sqrt(dx*dx+dy*dy)||0.01;const k=(d-118)*0.012;const fx=dx/d*k,fy=dy/d*k;a.vx+=fx;a.vy+=fy;b.vx-=fx;b.vy-=fy;}
+  for(let i=0;i<nodes.length;i++){const n=nodes[i];if(i===drag&&dragging)continue;n.vx*=0.86;n.vy*=0.86;n.x+=Math.max(-8,Math.min(8,n.vx));n.y+=Math.max(-8,Math.min(8,n.vy));const r=rad(n)+4;n.x=Math.max(r,Math.min(W-r,n.x));n.y=Math.max(r,Math.min(H-r,n.y));}
+}
+function nbrs(i){const s=new Set();for(const e of edges){if(e.a===i)s.add(e.b);if(e.b===i)s.add(e.a);}return s;}
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  const hl=hover>=0?nbrs(hover):null;
+  for(const e of edges){const a=nodes[e.a],b=nodes[e.b];const on=hover>=0&&(e.a===hover||e.b===hover);
+    ctx.strokeStyle=on?"rgba(201,168,76,.75)":(hover>=0?"rgba(120,132,148,.10)":"rgba(120,132,148,.22)");
+    ctx.lineWidth=on?2:1;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
+  for(let i=0;i<nodes.length;i++){const n=nodes[i];const dim=hover>=0&&i!==hover&&!(hl&&hl.has(i));
+    const r=rad(n);ctx.globalAlpha=dim?0.28:1;
+    ctx.beginPath();ctx.arc(n.x,n.y,r,0,7);ctx.fillStyle=col(n);ctx.fill();
+    if(i===hover){ctx.lineWidth=2;ctx.strokeStyle="#e8e3d8";ctx.stroke();}
+    ctx.globalAlpha=dim?0.3:0.95;ctx.fillStyle="#cdd4de";ctx.font="11px "+getComputedStyle(document.body).fontFamily.split(",")[0];
+    ctx.textAlign="center";ctx.fillText(n.label,n.x,n.y+r+11);ctx.globalAlpha=1;}
+}
+let ticks=0;function loop(){if(ticks<260||dragging){tick();ticks++;}draw();requestAnimationFrame(loop);}loop();
+function pos(ev){const rc=cv.getBoundingClientRect();const t=ev.touches?ev.touches[0]:ev;return{x:(t.clientX-rc.left),y:(t.clientY-rc.top)};}
+function pick(p){for(let i=0;i<nodes.length;i++){const n=nodes[i];const dx=p.x-n.x,dy=p.y-n.y;if(dx*dx+dy*dy<=(rad(n)+6)*(rad(n)+6))return i;}return -1;}
+function onMove(ev){const p=pos(ev);
+  if(dragging&&drag>=0){nodes[drag].x=p.x;nodes[drag].y=p.y;nodes[drag].vx=nodes[drag].vy=0;ev.preventDefault&&ev.preventDefault();return;}
+  const i=pick(p);hover=i;cv.style.cursor=i>=0?"pointer":"default";
+  if(i>=0){tip.style.opacity=1;tip.style.left=Math.min(W-250,p.x+14)+"px";tip.style.top=(p.y+14)+"px";
+    const es=edges.filter(e=>e.a===i||e.b===i).slice(0,6).map(e=>"• "+e.r).join("<br>");
+    tip.innerHTML="<b>"+nodes[i].label+"</b><br>"+es;}
+  else tip.style.opacity=0;
+}
+cv.addEventListener("mousemove",onMove);
+cv.addEventListener("touchmove",onMove,{passive:false});
+cv.addEventListener("mousedown",ev=>{const i=pick(pos(ev));if(i>=0){drag=i;dragging=true;}});
+cv.addEventListener("touchstart",ev=>{const i=pick(pos(ev));if(i>=0){drag=i;dragging=true;}});
+window.addEventListener("mouseup",()=>{dragging=false;drag=-1;});
+window.addEventListener("touchend",()=>{dragging=false;drag=-1;});
+let downAt=0;cv.addEventListener("mousedown",()=>downAt=Date.now());
+cv.addEventListener("click",ev=>{if(Date.now()-downAt>250)return;const i=pick(pos(ev));if(i>=0)location.href=nodes[i].slug+"/index.html";});
+cv.addEventListener("mouseleave",()=>{hover=-1;tip.style.opacity=0;});
+window.addEventListener("resize",()=>{const oldW=W,oldH=H;size();const sx=W/oldW,sy=H/oldH;nodes.forEach(n=>{n.x*=sx;n.y*=sy;});ticks=0;});
+</script>
+</body>
+</html>

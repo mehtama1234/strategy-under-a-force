@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Machine Behind All 35 — the master engines of the whole series</title>
+<style>
+:root{
+  --g0:#0d1117;--g1:#11161e;--g2:#161c26;--g3:#1c2330;--line:#272f3d;--line2:#1e2635;
+  --ink:#e8e3d8;--ink2:#b8c0cc;--ink3:#7a8494;
+  --teal:#3ec9b6;--orange:#e09858;--gold:#c9a84c;--red:#d97a6c;--blue:#6c9fd9;--purple:#a98cd9;--green:#7bbf6a;
+  --serif:Palatino,"Palatino Linotype","Book Antiqua",Charter,Georgia,serif;--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--g0);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 clamp(22px,5vw,60px) 100px}
+a{color:var(--gold);text-underline-offset:3px}
+.top{padding:26px 0 6px;display:flex;gap:14px;flex-wrap:wrap}
+.back{font-family:var(--mono);font-size:.72rem;color:var(--ink3);text-decoration:none}.back:hover{color:var(--gold)}
+.hero{padding:38px 0 26px;border-bottom:1px solid var(--line)}
+.hero .eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.hero h1{font-size:clamp(2.1rem,5.5vw,3.2rem);font-weight:700;line-height:1.06;color:var(--ink);letter-spacing:-.02em;text-wrap:balance;margin-bottom:.35em}
+.hero .sub{font-size:1.18rem;color:var(--ink2);font-style:italic;max-width:680px}
+.lede{font-size:1.14rem;color:var(--ink);line-height:1.72;margin:1.5em 0}
+.big{background:var(--g2);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:20px 24px;margin:1.6em 0}
+.big .lbl{font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.big p{color:var(--ink);font-size:1.08rem;margin:0}
+.big p+p{margin-top:.7em}
+.eng{background:var(--g1);border:1px solid var(--line2);border-radius:14px;padding:22px 24px;margin:20px 0;border-left:4px solid}
+.eng .n{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
+.eng h2{font-size:1.5rem;font-weight:700;color:var(--ink);line-height:1.12;margin:.15em 0 .1em}
+.eng .say{font-size:1rem;color:var(--ink2);font-style:italic;margin-bottom:.7em}
+.eng p{font-size:1rem;color:var(--ink2);margin:0 0 .9em}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px}
+.chips a{font-family:var(--mono);font-size:.68rem;color:var(--ink2);text-decoration:none;background:var(--g3);border:1px solid var(--line);border-radius:20px;padding:4px 11px;transition:.12s}
+.chips a:hover{color:var(--ink);transform:translateY(-1px)}
+.e1{border-left-color:var(--red)} .e1 h2{color:var(--red)} .e1 .chips a:hover{border-color:var(--red)}
+.e2{border-left-color:var(--gold)} .e2 h2{color:var(--gold)} .e2 .chips a:hover{border-color:var(--gold)}
+.e3{border-left-color:var(--teal)} .e3 h2{color:var(--teal)} .e3 .chips a:hover{border-color:var(--teal)}
+.e4{border-left-color:var(--purple)} .e4 h2{color:var(--purple)} .e4 .chips a:hover{border-color:var(--purple)}
+.e5{border-left-color:var(--blue)} .e5 h2{color:var(--blue)} .e5 .chips a:hover{border-color:var(--blue)}
+.e6{border-left-color:var(--green)} .e6 h2{color:var(--green)} .e6 .chips a:hover{border-color:var(--green)}
+h3.sh{font-size:1.35rem;color:var(--ink);margin:2.4em 0 .3em;padding-top:1.4em;border-top:1px solid var(--line2)}
+.shocks{display:flex;flex-wrap:wrap;gap:7px;margin:1em 0}
+.shocks a{font-family:var(--mono);font-size:.68rem;color:var(--ink2);text-decoration:none;background:var(--g2);border:1px solid var(--line);border-radius:20px;padding:4px 11px}
+.shocks a:hover{color:var(--orange);border-color:var(--orange)}
+.cta{display:inline-block;font-family:var(--mono);font-size:.8rem;letter-spacing:.03em;color:var(--teal);border:1px solid var(--teal);border-radius:24px;padding:10px 22px;text-decoration:none;margin:.4em 0}
+footer{padding:44px 0 40px;color:var(--ink3);font-family:var(--mono);font-size:.72rem;border-top:1px solid var(--line2);margin-top:3em;line-height:1.9}
+footer a{color:var(--gold);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="back" href="index.html">★ all 35 forces</a><a class="back" href="idea-graph.html">the idea graph →</a></div>
+
+  <header class="hero">
+    <div class="eyebrow">The capstone · what the whole series is really about</div>
+    <h1>The machine behind all 35</h1>
+    <div class="sub">Thirty-five forces, thirty-five collections — but underneath them run just six engines. Learn the engines and the whole map snaps into focus.</div>
+  </header>
+
+  <p class="lede">Each collection in this series takes one big <em>force</em> and asks the same question: what did it make scarce, cheap, safe, risky, or newly valuable? Line up all thirty-five answers and the disguises fall away. The same handful of mechanics keep reappearing in new costumes — a gate here, a recurring bill there, a scarcity that moved, a clock that sped up. Below are the <strong>six master engines</strong> that most of the thirty-five are really running.</p>
+
+  <div class="big">
+    <div class="lbl">The grand unified idea</div>
+    <p>Companies win by controlling one of six machines: <strong>(1)</strong> a gate that taxes passage; <strong>(2)</strong> a way to turn any activity into a recurring, tradeable asset; <strong>(3)</strong> a move toward whatever just got scarce; <strong>(4)</strong> impatience — capturing value before the system notices you're extracting it; <strong>(5)</strong> turning your behavior into a resellable asset; and <strong>(6)</strong> owning the atoms that software can't replace.</p>
+    <p>The thirty-five forces are just new contexts where these six engines fire. Master one and you reshape an industry; master two or three — the way Amazon runs a chokepoint, behavioral collateral, and financialization at once — and you become almost untouchable.</p>
+  </div>
+
+  <section class="eng e1">
+    <div class="n">Engine 01 · the chokepoint tax</div>
+    <h2>Own the gate, tax what passes through</h2>
+    <div class="say">The value of the product becomes secondary to the power to tax who reaches it.</div>
+    <p>When a gateway, a permission, a shelf, a standard, or a verification step becomes mandatory, whoever controls it can charge rent forever — without producing the core value at all. Switching costs make the gate sticky, so the tax rises without the traffic falling.</p>
+    <div class="chips">
+      <a href="the-toll-booth-economy/index.html">Toll-Booth Economy</a>
+      <a href="the-gatekeeper-tax/index.html">Gatekeeper Tax</a>
+      <a href="locked-in/index.html">Locked In</a>
+      <a href="verification-tax/index.html">Verification Tax</a>
+      <a href="store-is-the-brand/index.html">Store Is the Brand</a>
+      <a href="real-estate-is-the-moat/index.html">Real Estate Is the Moat</a>
+      <a href="water-critical-minerals/index.html">Water &amp; Minerals (the refinery)</a>
+      <a href="passive-investing/index.html">Passive Investing (index inclusion)</a>
+      <a href="insurance-retreat/index.html">Insurance Retreat (the tripwire)</a>
+    </div>
+  </section>
+
+  <section class="eng e2">
+    <div class="n">Engine 02 · financialization</div>
+    <h2>Turn any activity into a recurring, tradeable asset</h2>
+    <div class="say">Stop selling the thing once; sell subscriptions, memberships, loans, and fractions of it forever.</div>
+    <p>An activity, a relationship, or a physical object gets sliced, packaged, and sold repeatedly as a financial product. The company shifts from vendor to asset manager, because predictable, recurring cash flow is valued far above a one-time sale — even a lawsuit or a loyalty card becomes a security.</p>
+    <div class="chips">
+      <a href="everyones-a-bank/index.html">Everyone's a Bank</a>
+      <a href="private-credit-boom/index.html">Private-Credit Boom</a>
+      <a href="litigation-as-an-asset-class/index.html">Litigation as an Asset Class</a>
+      <a href="the-roll-up/index.html">The Roll-Up</a>
+      <a href="passive-investing/index.html">Passive Investing</a>
+      <a href="subscription-fatigue/index.html">Subscription Fatigue</a>
+      <a href="the-loyalty-economy/index.html">Loyalty Economy</a>
+      <a href="real-estate-is-the-moat/index.html">Real Estate Is the Moat</a>
+    </div>
+  </section>
+
+  <section class="eng e3">
+    <div class="n">Engine 03 · the scarce thing moved</div>
+    <h2>Follow value as it flees to the new bottleneck</h2>
+    <div class="say">When the old constraint dissolves, profit migrates upstream to the new one — before anyone notices.</div>
+    <p>Markets reward scarcity. As competition or technology commoditizes one layer, the profit pool relocates to whatever is now hard to copy — the refinery, the standard, the attention, the sense of belonging, or simply the willingness to wait. Yesterday's winner is left brilliant at a thing nobody pays for anymore.</p>
+    <div class="chips">
+      <a href="value-migration/index.html">Value Migration</a>
+      <a href="the-attention-economy/index.html">Attention Economy</a>
+      <a href="water-critical-minerals/index.html">Water &amp; Critical Minerals</a>
+      <a href="the-cohort-economy/index.html">Cohort Economy (belonging)</a>
+      <a href="institutional-patience-running-out/index.html">Patience Running Out</a>
+      <a href="the-energy-transition/index.html">Energy Transition</a>
+      <a href="end-of-cheap-money/index.html">End of Cheap Money</a>
+    </div>
+  </section>
+
+  <section class="eng e4">
+    <div class="n">Engine 04 · the shortened clock</div>
+    <h2>Impatience — extract before the system catches up</h2>
+    <div class="say">The clock keeps getting shorter, so value gets harvested now and the long-term asset gets hollowed out.</div>
+    <p>Capital, customers, and managers all demand faster returns and refuse to wait, so companies extract aggressively in the near term. Patient, long-horizon capital became the scarce resource — which both starves anything that pays off in decades and hands a quiet moat to whoever can still wait.</p>
+    <div class="chips">
+      <a href="institutional-patience-running-out/index.html">Patience Running Out</a>
+      <a href="private-credit-boom/index.html">Private-Credit Boom</a>
+      <a href="the-roll-up/index.html">The Roll-Up</a>
+      <a href="end-of-cheap-money/index.html">End of Cheap Money</a>
+      <a href="subscription-fatigue/index.html">Subscription Fatigue</a>
+      <a href="gambling-economy/index.html">Gambling Economy</a>
+      <a href="the-attention-economy/index.html">Attention Economy</a>
+    </div>
+  </section>
+
+  <section class="eng e5">
+    <div class="n">Engine 05 · behavioral collateral</div>
+    <h2>You are the asset — your data, attention, and loyalty get resold</h2>
+    <div class="say">You think you're the customer; you're the product, and the switching cost is built before you notice.</div>
+    <p>The revenue doesn't come from selling you a thing — it comes from selling your behavior, attention, or belonging to third parties. Behavioral exhaust is infinite and renewable, and mostly invisible, so resistance only arrives once the exploitation is obvious and leaving is already hard. Privacy tech is the antibody the disease produced.</p>
+    <div class="chips">
+      <a href="surveillance-data-as-product/index.html">Surveillance / Data as Product</a>
+      <a href="everyones-an-ad-business/index.html">Everyone's an Ad Business</a>
+      <a href="the-attention-economy/index.html">Attention Economy</a>
+      <a href="the-loyalty-economy/index.html">Loyalty Economy</a>
+      <a href="the-cohort-economy/index.html">Cohort Economy</a>
+      <a href="store-is-the-brand/index.html">Store Is the Brand (shopper data)</a>
+      <a href="privacy-tech-data-dignity/index.html">Privacy Tech (the counter-market)</a>
+    </div>
+  </section>
+
+  <section class="eng e6">
+    <div class="n">Engine 06 · atoms strike back</div>
+    <h2>Own the atoms that software can't replace</h2>
+    <div class="say">After 30 years of software eating the world, physics and geography sent the bill.</div>
+    <p>Energy, minerals, water, land, bodies, and secure supply chains were treated as infinite and cheap while everyone obsessed over software. They aren't. Physical and security constraints came roaring back, and whoever controls the scarce atoms — or the human service that can't be automated — holds the leverage.</p>
+    <div class="chips">
+      <a href="water-critical-minerals/index.html">Water &amp; Critical Minerals</a>
+      <a href="the-energy-transition/index.html">Energy Transition</a>
+      <a href="reshoring-by-constraint/index.html">Reshoring by Constraint</a>
+      <a href="the-decoupling/index.html">The Decoupling</a>
+      <a href="the-climate-bill/index.html">The Climate Bill</a>
+      <a href="insurance-retreat/index.html">Insurance Retreat</a>
+      <a href="cost-disease/index.html">Cost Disease (un-automatable services)</a>
+      <a href="the-demographic-cliff/index.html">Demographic Cliff (scarce workers)</a>
+    </div>
+  </section>
+
+  <h3 class="sh">The shocks that start the engines</h3>
+  <p>Six engines describe how companies <em>respond</em>. But something has to move first — a demand shock, a demographic turn, a new molecule, a change in how people live. These forces don't fit one engine; they're the openings the engines rush to exploit. When the ground shifts, the six machines get to work on the new terrain.</p>
+  <div class="shocks">
+    <a href="company-strategy-under-ai/index.html">AI</a>
+    <a href="ozempic-effect/index.html">The Ozempic Effect</a>
+    <a href="the-demographic-cliff/index.html">The Demographic Cliff</a>
+    <a href="last-call/index.html">Last Call</a>
+    <a href="the-pet-economy/index.html">The Pet Economy</a>
+    <a href="the-remote-shift/index.html">The Remote Shift</a>
+    <a href="the-climate-bill/index.html">The Climate Bill</a>
+  </div>
+
+  <div class="big">
+    <div class="lbl">The single deepest idea</div>
+    <p>Strip everything back and the whole series is about one thing: <strong>scarcity — of atoms, attention, trust, access, or the ability to wait — gets discovered, owned, and taxed by whoever sees it first, and yesterday's winners get blindsided when the bottleneck moves.</strong> Every collection is a case study in spotting the new scarcity before the crowd, and building the gate, the asset, or the moat around it.</p>
+  </div>
+
+  <p style="text-align:center;margin:2em 0"><a class="cta" href="idea-graph.html">★ See how the 35 connect — the idea graph &nbsp;→</a></p>
+
+  <footer>
+    The capstone of the <a href="index.html">Strategy Under a Force</a> series · 35 collections · 467 write-ups.<br><br>
+    Synthesis run on Haiku (direct, no sub-agents), assembled into six engines.
+  </footer>
+</div>
+</body>
+</html>
