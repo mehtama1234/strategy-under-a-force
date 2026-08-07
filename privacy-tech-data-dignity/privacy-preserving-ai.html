@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy-preserving AI — Privacy Tech / Data Dignity</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="acc-blue">
+<div class="wrap">
+  <nav class="top">
+    <a href="index.html">← all 13</a>
+    <span><a href="consent-and-cookie-banners.html">← Cookie-banner theater</a> · <a href="death-of-the-cookie.html">Death of the cookie →</a></span>
+  </nav>
+
+  <header class="hero">
+    <div class="eyebrow">Group C · The technical frontier</div>
+    <h1>Privacy-preserving AI</h1>
+    <p class="sub">New math lets companies use your data without seeing it — until an attacker with five other datasets re-identifies you anyway.</p>
+  </header>
+
+  <p class="lede">A set of techniques lets companies use data without exposing individuals: <em>differential privacy</em> (adding statistical noise so no one person can be identified — used by Apple and the US Census), <em>federated learning</em> (training AI on your phone so the data never leaves it — Google's keyboard), <em>on-device AI</em> (Apple keeping processing local), and <em>homomorphic encryption</em> (computing on data that stays encrypted). The pitch: the benefits of your data without the surveillance.</p>
+
+  <div class="big">
+    <div class="lbl">The core bet</div>
+    <p>You can extract value from data without exposing it — by adding noise, keeping it local, or computing on it encrypted. But the math is harder than the marketing suggests, and attackers keep finding ways to reverse-engineer individuals from "anonymized" outputs.</p>
+  </div>
+
+  <h2>What the numbers say</h2>
+
+  <div class="fact"><div class="num">2016</div><div class="txt">Apple began using differential privacy (statistical noise) on things like Siri and dictionary usage.</div></div>
+  <div class="fact"><div class="num">2020</div><div class="txt">the US Census deployed differential privacy across all demographic tables to protect individual households.</div></div>
+  <div class="fact"><div class="num">1B+</div><div class="txt">users of Google's federated learning in Gboard — the keyboard learns on-device without uploading keystrokes.</div></div>
+  <div class="fact"><div class="num">2024</div><div class="txt">Apple Intelligence + Private Cloud Compute — on-device AI, with heavier tasks kept pseudonymous in Apple's servers.</div></div>
+  <div class="fact"><div class="num warn">1,000–10,000×</div><div class="txt">how much slower homomorphic encryption still runs than plaintext — real, but not yet production-scale.</div></div>
+
+  <h2>Context collapse breaks the guarantee</h2>
+  <p>The guarantee holds only in isolation. Add noise to one health record, then link it to a postal code, employer, and credit-card history, and re-identification becomes trivial — researchers call it "context collapse." Since data brokers and ad networks already hold overlapping profiles, adding math-privacy to one slice is security theater if the person is already identified three other ways.</p>
+
+  <div class="split">
+    <div class="s good"><h3>Who ends up ahead</h3><p>Platforms that can genuinely use data more privately — and the chipmakers selling the on-device hardware.</p></div>
+    <div class="s bad"><h3>Who's exposed</h3><p>Anyone assured they're anonymous who is actually re-identifiable via other datasets an attacker already holds.</p></div>
+  </div>
+
+  <div class="big warn">
+    <div class="lbl">The single biggest worry</div>
+    <p>The trade-off is brutal: the more noise you add, the less useful the data becomes, so companies quietly leak utility (accuracy, speed, personalization) to reach an awkward middle. And the strongest guarantees assume an attacker with <em>no</em> other data — an assumption that's rarely true in a world full of brokers.</p>
+  </div>
+
+  <h2>The surprising part</h2>
+  <p>The most successful deployment isn't the fanciest — it's plain noise at the US Census, which achieves legal anonymity but degrades the data. Meanwhile flashy federated learning is slower, drains battery, and still sometimes uploads data anyway. The industry keeps trading privacy for utility, because users prefer responsive AI to paranoia.</p>
+
+  <div class="big">
+    <div class="lbl">In one sentence</div>
+    <p>Privacy tech makes it mathematically hard to re-identify someone in isolation, but practically useless once an attacker has context from five other sources — so companies settle for an awkward middle ground.</p>
+  </div>
+
+  <footer>
+    <a href="death-of-the-cookie.html">Next: Death of the cookie — how a privacy win entrenched the giants →</a><br><br>
+    Research run on Haiku, direct. Part of <a href="index.html">Privacy Tech / Data Dignity</a>.
+  </footer>
+</div>
+</body>
+</html>
