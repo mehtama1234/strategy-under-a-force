@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Idea Graph — how the 35 forces connect</title>
+<title>The Idea Graph — how the 42 forces connect</title>
 <style>
 :root{
   --g0:#0d1117;--g1:#11161e;--g2:#161c26;--g3:#1c2330;--line:#272f3d;--line2:#1e2635;
@@ -32,9 +32,9 @@ footer a{color:var(--gold);text-decoration:none}
 </head>
 <body>
 <div class="wrap">
-  <div class="top"><a href="index.html">★ all 35 forces</a><a href="the-machine.html">← the machine behind all 35</a></div>
+  <div class="top"><a href="index.html">★ all 42 forces</a><a href="the-machine.html">← the machine behind all 42</a></div>
   <h1>The idea graph</h1>
-  <div class="sub">Thirty-five forces, drawn as one web. Each line is a real link — one force feeds, explains, mirrors, or opposes another. Drag a node; hover a line to read why.</div>
+  <div class="sub">Forty-two forces, drawn as one web. Each line is a real link — one force feeds, explains, mirrors, or opposes another. Drag a node; hover a line to read why.</div>
   <div class="legend">
     <span><i class="dot" style="background:var(--orange)"></i> Macro forces</span>
     <span><i class="dot" style="background:var(--teal)"></i> Hidden-mechanism business models</span>
@@ -60,7 +60,10 @@ const N=[
 ["store-is-the-brand","Store Is the Brand",2],["real-estate-is-the-moat","Real Estate Moat",2],["surveillance-data-as-product","Surveillance",2],
 ["passive-investing","Passive Investing",2],["subscription-fatigue","Subscription Fatigue",2],["the-cohort-economy","Cohort Economy",2],
 ["litigation-as-an-asset-class","Litigation Finance",2],
-["the-gatekeeper-tax","Gatekeeper Tax",3],["cost-disease","Cost Disease",3],["verification-tax","Verification Tax",3],["value-migration","Value Migration",3]
+["the-gatekeeper-tax","Gatekeeper Tax",3],["cost-disease","Cost Disease",3],["verification-tax","Verification Tax",3],["value-migration","Value Migration",3],
+["the-staffing-economy","Staffing Economy",1],["care-comes-home","Care Comes Home",1],["the-great-rebuild","Great Rebuild",1],
+["selling-to-the-state","Selling to the State",1],["the-compute-buildout","Compute Build-Out",1],["the-great-wealth-transfer","Great Wealth Transfer",1],
+["the-admin-burden-economy","Admin-Burden Economy",2]
 ];
 const E=[
 ["company-strategy-under-ai","private-credit-boom","AI pushes yield-seeking money into shadow lending"],
@@ -112,7 +115,26 @@ const E=[
 ["value-migration","the-toll-booth-economy","profit pools at the new bottleneck you can toll"],
 ["verification-tax","the-gatekeeper-tax","both tax the right to transact"],
 ["surveillance-data-as-product","the-cohort-economy","the tribe is also a targeting asset"],
-["passive-investing","institutional-patience-running-out","herd-speed flows replace patient owners"]
+["passive-investing","institutional-patience-running-out","herd-speed flows replace patient owners"],
+["the-staffing-economy","the-demographic-cliff","scarce workers, so renting labor became the business"],
+["the-staffing-economy","the-great-rebuild","the same skilled-trades shortage bites both"],
+["the-staffing-economy","the-roll-up","staffing agencies consolidate like any fragmented trade"],
+["care-comes-home","the-demographic-cliff","the seniors arrived; care followed them home"],
+["care-comes-home","cost-disease","hands-on care is the work AI can't automate"],
+["care-comes-home","the-great-wealth-transfer","long-term care quietly eats the inheritance"],
+["the-great-rebuild","reshoring-by-constraint","the reshored factories still have to be built"],
+["the-great-rebuild","the-energy-transition","both back up behind the grid and the trades"],
+["the-great-rebuild","the-compute-buildout","data centers are the digital half of the same build"],
+["the-compute-buildout","company-strategy-under-ai","the physical supply side of the AI boom"],
+["the-compute-buildout","the-energy-transition","AI is the new demand shock on the grid"],
+["the-compute-buildout","water-critical-minerals","chips need refined inputs, power, and water"],
+["selling-to-the-state","the-gatekeeper-tax","the permission barrier is the moat"],
+["selling-to-the-state","the-toll-booth-economy","an embedded, near-permanent toll on public money"],
+["selling-to-the-state","the-admin-burden-economy","the procurement maze is friction sold as a moat"],
+["the-admin-burden-economy","cost-disease","admin cost that nobody is paid to simplify"],
+["the-admin-burden-economy","care-comes-home","healthcare is the flagship of the paperwork economy"],
+["the-great-wealth-transfer","everyones-a-bank","PE bought the insurers for the annuity float"],
+["the-great-wealth-transfer","the-roll-up","the wealth-advisor roll-up chases the fee stream"]
 ];
 const cv=document.getElementById("cv"),ctx=cv.getContext("2d"),tip=document.getElementById("tip"),stage=cv.parentElement;
 let W=0,H=0,DPR=Math.max(1,Math.min(2,window.devicePixelRatio||1));
