@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Warranty Margin Machine — the product is bait; the coverage is the profit</title>
+<style>
+:root{
+  --g0:#0d1117;--g1:#11161e;--g2:#161c26;--g3:#1c2330;--line:#272f3d;--line2:#1e2635;
+  --ink:#e8e3d8;--ink2:#b8c0cc;--ink3:#7a8494;
+  --teal:#3ec9b6;--orange:#e09858;--gold:#c9a84c;--red:#d97a6c;--blue:#6c9fd9;--purple:#a98cd9;--green:#7bbf6a;
+  --serif:Palatino,"Palatino Linotype","Book Antiqua",Charter,Georgia,serif;--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--g0);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 clamp(22px,5vw,60px) 100px}
+a{color:var(--red);text-underline-offset:3px}
+.top{padding:26px 0 6px;display:flex;gap:14px;flex-wrap:wrap}
+.back{font-family:var(--mono);font-size:.72rem;color:var(--ink3);text-decoration:none}.back:hover{color:var(--red)}
+.hero{padding:38px 0 26px;border-bottom:1px solid var(--line)}
+.hero .eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+.hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:700;line-height:1.08;color:var(--ink);letter-spacing:-.02em;text-wrap:balance;margin-bottom:.35em}
+.hero .sub{font-size:1.14rem;color:var(--ink2);font-style:italic}
+.lede{font-size:1.13rem;color:var(--ink);line-height:1.7;margin:1.4em 0}
+.big{background:var(--g2);border:1px solid var(--line);border-left:4px solid var(--red);border-radius:0 10px 10px 0;padding:18px 22px;margin:1.5em 0}
+.big .lbl{font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.big p{color:var(--ink);font-size:1.06rem;margin:0}
+.seed{background:var(--g1);border:1px solid var(--line2);border-radius:10px;padding:13px 17px;margin:1.3em 0;font-size:.95rem;color:var(--ink2)}
+.seed b{color:var(--ink)}.seed .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:5px}
+.sec{margin:2.6em 0 0}
+.sec-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding-top:1.4em;border-top:1px solid var(--line2);margin-bottom:2px}
+.sec-h .tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 9px;border-radius:20px;border:1px solid}
+.sec-h h2{font-size:1.5rem;font-weight:600;color:var(--ink);line-height:1.15}
+.sec-sub{color:var(--ink3);font-size:.98rem;margin:.2em 0 1em}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:1em 0}
+@media(max-width:620px){.cards{grid-template-columns:1fr}}
+.card{background:var(--g1);border:1px solid var(--line2);border-radius:11px;padding:15px 16px;border-left:3px solid;text-decoration:none;display:block;transition:transform .13s,border-color .13s}
+.card:hover{transform:translateY(-2px)}
+.card .co{font-size:1.08rem;color:var(--ink);font-weight:700}
+.card .one{font-size:.92rem;color:var(--ink2);margin:.25em 0 .5em;font-style:italic;line-height:1.4}
+.card .risk{font-family:var(--mono);font-size:.64rem;letter-spacing:.04em;color:var(--ink3)}
+.card .risk b{color:var(--ink);font-family:var(--serif);font-style:normal;font-weight:600;font-size:.92rem}
+.a1 .tag{color:var(--red);border-color:var(--red)} .a1 .card{border-left-color:var(--red)}
+.a2 .tag{color:var(--green);border-color:var(--green)} .a2 .card{border-left-color:var(--green)}
+.a3 .tag{color:var(--blue);border-color:var(--blue)} .a3 .card{border-left-color:var(--blue)}
+.a4 .tag{color:var(--purple);border-color:var(--purple)} .a4 .card{border-left-color:var(--purple)}
+.a5 .tag{color:var(--gold);border-color:var(--gold)} .a5 .card{border-left-color:var(--gold)}
+footer{padding:44px 0 40px;color:var(--ink3);font-family:var(--mono);font-size:.72rem;border-top:1px solid var(--line2);margin-top:3em;line-height:1.9}
+footer a{color:var(--red);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="back" href="../index.html">★ all forces</a><a class="back" href="../locked-in/index.html">Locked In</a><a class="back" href="../the-float-and-breakage-economy/index.html">Float &amp; Breakage</a><a class="back" href="../everyones-a-bank/index.html">Everyone's a Bank</a></div>
+
+  <header class="hero">
+    <div class="eyebrow">A collection · plain English · 2026</div>
+    <h1>The Warranty Margin Machine</h1>
+    <div class="sub">The product is the loss-leader — the coverage is the profit, and it must fail just often enough.</div>
+  </header>
+
+  <p class="lede">The 50th force. Extended warranties, service plans, AppleCare, device protection, home warranties, and the car dealer's "finance &amp; insurance" office all sell protection at enormous margins — often 50–70%+ — because the price is set on the gap between what you pay and how rarely you actually claim. A store can make more profit on the warranty for a TV than on the TV itself. The visible product is the phone, the sofa, or the car; the hidden engine is the protection plan sold at the register and quietly backed by an underwriter you've never heard of. The one idea: <em>the retailer makes more on the coverage than on the thing it protects — and quietly needs the product to fail just often enough, but not too much.</em></p>
+
+  <div class="seed">
+    <span class="k">A fresh mechanism (Tier-7)</span>
+    Not from the Inc. 5000 taxonomy — surfaced by a Haiku discovery-scout pass for genuinely new hidden-mechanism business models. The lens: the low-margin product as bait for the high-margin protection plan.
+  </div>
+
+  <div class="big">
+    <div class="lbl">The one question, asked of everyone</div>
+    <p>What did the warranty machine make <em>scarce, cheap, safe, risky, or newly worth money</em>? The product got cheap and commoditized (thin margins), while the peace-of-mind plan on top became the scarce, high-margin profit — priced where you can't comparison-shop; and the buyer's forgetfulness (and the difficulty of claiming) only helped. The danger: the whole thing rests on customers misjudging the odds, so the incentives to deny, delay, and design friction run against them — which is exactly what invites regulators and erodes trust.</p>
+  </div>
+
+  <p style="text-align:center;margin:1.7em 0"><a href="patterns.html" style="display:inline-block;font-family:var(--mono);font-size:.8rem;letter-spacing:.03em;color:var(--gold);border:1px solid var(--gold);border-radius:24px;padding:10px 22px;text-decoration:none">★ The patterns — what repeats across all 13 &nbsp;→</a></p>
+
+  <section class="sec a1">
+    <div class="sec-h"><span class="tag">Group A</span><h2>The register upsell</h2></div>
+    <div class="sec-sub">"Do you want to protect that?" — the highest-margin words in retail.</div>
+    <div class="cards">
+      <a class="card" href="extended-warranties.html"><div class="co">Extended warranties</div><div class="one">The store earns more on the plan than the TV.</div><div class="risk">Worry: <b>a bad deal for most</b></div></a>
+      <a class="card" href="applecare-and-device-protection.html"><div class="co">AppleCare &amp; device protection</div><div class="one">Pay monthly, then pay a deductible too.</div><div class="risk">Worry: <b>the insurer wins twice</b></div></a>
+      <a class="card" href="home-and-appliance-warranties.html"><div class="co">Home &amp; appliance warranties</div><div class="one">Insurance that's good at saying no.</div><div class="risk">Worry: <b>the denial is the engine</b></div></a>
+    </div>
+  </section>
+
+  <section class="sec a2">
+    <div class="sec-h"><span class="tag">Group B</span><h2>The big-ticket version</h2></div>
+    <div class="sec-sub">Where the add-on out-earns the whole sale.</div>
+    <div class="cards">
+      <a class="card" href="the-f-and-i-office.html"><div class="co">The F&amp;I office</div><div class="one">Where car dealers really make money.</div><div class="risk">Worry: <b>sold when your guard is down</b></div></a>
+      <a class="card" href="vehicle-service-contracts.html"><div class="co">Vehicle service contracts</div><div class="one">"Your car's warranty is about to expire."</div><div class="risk">Worry: <b>layers of middlemen</b></div></a>
+      <a class="card" href="product-protection-plans.html"><div class="co">Protection on everything</div><div class="one">You can now warranty a $30 item.</div><div class="risk">Worry: <b>you already have coverage</b></div></a>
+    </div>
+  </section>
+
+  <section class="sec a3">
+    <div class="sec-h"><span class="tag">Group C</span><h2>The machinery</h2></div>
+    <div class="sec-sub">The invisible backers and the math that makes it work.</div>
+    <div class="cards">
+      <a class="card" href="the-underwriters.html"><div class="co">The underwriters</div><div class="one">Assurant &amp; Asurion back most of it.</div><div class="risk">Worry: <b>concentrated &amp; invisible</b></div></a>
+      <a class="card" href="why-claims-stay-low.html"><div class="co">Why claims stay low</div><div class="one">You pay for a failure that won't happen.</div><div class="risk">Worry: <b>worse odds than insurance</b></div></a>
+      <a class="card" href="warranty-as-a-service.html"><div class="co">Warranty-as-a-service</div><div class="one">The upsell became an API for any store.</div><div class="risk">Worry: <b>same low-payout product</b></div></a>
+    </div>
+  </section>
+
+  <section class="sec a4">
+    <div class="sec-h"><span class="tag">Group D</span><h2>The mechanism &amp; the tensions</h2></div>
+    <div class="sec-sub">Why coverage wins, who profits, and where it breaks.</div>
+    <div class="cards">
+      <a class="card" href="why-coverage-out-earns-the-product.html"><div class="co">Why coverage out-earns the product</div><div class="one">Chase the plan, not the product.</div><div class="risk">Worry: <b>rests on misjudgment</b></div></a>
+      <a class="card" href="who-profits.html"><div class="co">Who profits</div><div class="one">A wealth transfer to a few sellers.</div><div class="risk">Worry: <b>it props up thin retail</b></div></a>
+      <a class="card" href="the-limits.html"><div class="co">The limits</div><div class="one">The biggest enemy is an informed buyer.</div><div class="risk">Worry: <b>regulation &amp; transparency</b></div></a>
+    </div>
+  </section>
+
+  <section class="sec a5">
+    <div class="sec-h"><span class="tag">Group E</span><h2>The big picture</h2></div>
+    <div class="sec-sub">The whole force in one place.</div>
+    <div class="cards">
+      <a class="card" href="the-warranty-margin-machine.html"><div class="co">The warranty margin machine</div><div class="one">The seller wins when it doesn't break.</div><div class="risk">Worry: <b>you pay to lose the bet</b></div></a>
+    </div>
+  </section>
+
+  <footer>
+    Plain English, research-checked (research run on Haiku, direct — no sub-agents). A Tier-7 mechanism from a fresh discovery-scout pass.<br><br>
+    Part of a series: <a href="../index.html">★ all forces</a> · <a href="../locked-in/index.html">Locked In</a> · <a href="../the-float-and-breakage-economy/index.html">Float &amp; Breakage</a> · <a href="../everyones-a-bank/index.html">Everyone's a Bank</a>
+  </footer>
+</div>
+</body>
+</html>
