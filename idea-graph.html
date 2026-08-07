@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Idea Graph — how the 42 forces connect</title>
+<title>The Idea Graph — how the 44 forces connect</title>
 <style>
 :root{
   --g0:#0d1117;--g1:#11161e;--g2:#161c26;--g3:#1c2330;--line:#272f3d;--line2:#1e2635;
@@ -32,9 +32,9 @@ footer a{color:var(--gold);text-decoration:none}
 </head>
 <body>
 <div class="wrap">
-  <div class="top"><a href="index.html">★ all 42 forces</a><a href="the-machine.html">← the machine behind all 42</a></div>
+  <div class="top"><a href="index.html">★ all 44 forces</a><a href="the-machine.html">← the machine behind all 44</a></div>
   <h1>The idea graph</h1>
-  <div class="sub">Forty-two forces, drawn as one web. Each line is a real link — one force feeds, explains, mirrors, or opposes another. Drag a node; hover a line to read why.</div>
+  <div class="sub">Forty-four forces, drawn as one web. Each line is a real link — one force feeds, explains, mirrors, or opposes another. Drag a node; hover a line to read why.</div>
   <div class="legend">
     <span><i class="dot" style="background:var(--orange)"></i> Macro forces</span>
     <span><i class="dot" style="background:var(--teal)"></i> Hidden-mechanism business models</span>
@@ -63,7 +63,8 @@ const N=[
 ["the-gatekeeper-tax","Gatekeeper Tax",3],["cost-disease","Cost Disease",3],["verification-tax","Verification Tax",3],["value-migration","Value Migration",3],
 ["the-staffing-economy","Staffing Economy",1],["care-comes-home","Care Comes Home",1],["the-great-rebuild","Great Rebuild",1],
 ["selling-to-the-state","Selling to the State",1],["the-compute-buildout","Compute Build-Out",1],["the-great-wealth-transfer","Great Wealth Transfer",1],
-["the-admin-burden-economy","Admin-Burden Economy",2]
+["the-admin-burden-economy","Admin-Burden Economy",2],
+["the-creator-economy","Creator Economy",2],["the-commerce-stack","Commerce Stack",2]
 ];
 const E=[
 ["company-strategy-under-ai","private-credit-boom","AI pushes yield-seeking money into shadow lending"],
@@ -134,7 +135,15 @@ const E=[
 ["the-admin-burden-economy","cost-disease","admin cost that nobody is paid to simplify"],
 ["the-admin-burden-economy","care-comes-home","healthcare is the flagship of the paperwork economy"],
 ["the-great-wealth-transfer","everyones-a-bank","PE bought the insurers for the annuity float"],
-["the-great-wealth-transfer","the-roll-up","the wealth-advisor roll-up chases the fee stream"]
+["the-great-wealth-transfer","the-roll-up","the wealth-advisor roll-up chases the fee stream"],
+["the-creator-economy","the-attention-economy","the supply side of the attention everyone fights over"],
+["the-creator-economy","everyones-an-ad-business","the creator is a one-person ad channel"],
+["the-creator-economy","the-cohort-economy","superfans and belonging you do not cancel"],
+["the-creator-economy","store-is-the-brand","creator-owned brands are the store-is-the-brand in a person"],
+["the-creator-economy","the-commerce-stack","creators sell through the same picks-and-shovels stack"],
+["the-commerce-stack","the-toll-booth-economy","a toll on every online sale"],
+["the-commerce-stack","value-migration","profit fled the store to the bottleneck"],
+["the-commerce-stack","store-is-the-brand","own the brand vs rent the audience"]
 ];
 const cv=document.getElementById("cv"),ctx=cv.getContext("2d"),tip=document.getElementById("tip"),stage=cv.parentElement;
 let W=0,H=0,DPR=Math.max(1,Math.min(2,window.devicePixelRatio||1));
