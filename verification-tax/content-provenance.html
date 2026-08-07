@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Content provenance — The Verification Tax</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="acc-blue">
+<div class="wrap">
+  <nav class="top">
+    <a href="index.html">← all 13</a>
+    <span><a href="deepfake-detection.html">← deepfake detection</a> · <a href="credential-fraud.html">credential fraud →</a></span>
+  </nav>
+
+  <header class="hero">
+    <div class="eyebrow">Group C · Proving content is real</div>
+    <h1>Content provenance</h1>
+    <p class="sub">The fix for deepfakes may be signing the real — not catching the fake.</p>
+  </header>
+
+  <p class="lede">Instead of detecting fakes after the fact, the other approach is to prove real content <em>at the source</em> — cryptographically sign a photo or video so you can trace its origin and every edit. The C2PA standard ("Content Credentials") is backed by Adobe, Microsoft, camera makers, OpenAI, and Google; AI firms watermark their outputs. It flips the model from "prove it's fake" to "prove it's real." But it only works if everyone adopts it.</p>
+
+  <div class="big">
+    <div class="lbl">The core bet</div>
+    <p>The bet: attach a tamper-evident provenance trail (who shot it, when, what edits) to every image and video, so unsigned content becomes suspect by default. Rather than analyze the fake, never let it claim to be real. It's a "nutrition label" for media.</p>
+  </div>
+
+  <h2>What the numbers say</h2>
+
+  <div class="fact"><div class="num">2021</div><div class="txt"><b>C2PA</b> founded (Adobe, Microsoft, Sony, Nikon, Leica, BBC, later Google/OpenAI) — a cryptographic record of an image's origin and edits.</div></div>
+
+  <div class="fact"><div class="num">2023–25</div><div class="txt">Cameras from <b>Sony, Nikon, Leica, and Google Pixel</b> began signing photos at capture — but adoption is still a small slice of devices.</div></div>
+
+  <div class="fact"><div class="num">SynthID</div><div class="txt">Google's invisible AI watermark (2023) is detectable ~99.8% even after mild compression — but almost nobody checks for it.</div></div>
+
+  <div class="fact"><div class="num warn">80%+</div><div class="txt">Cases where provenance metadata breaks after normal social-media recompression — YouTube strips it, X/Meta/TikTok don't display it.</div></div>
+
+  <h2>A coordination problem</h2>
+  <p>The catch: it only works if cameras, editors, <em>and</em> platforms all adopt it. Today adoption is patchy — cameras optional, editors strip credentials, platforms indifferent — so signed content becomes a "luxury signal" for pro news orgs and flagship phones, while the billions of everyday photos stay unsigned and un-checkable. Stripping a credential is obvious; the deeper risk is social — people learn to ignore unsigned content, and bad actors simply stop signing.</p>
+
+  <div class="split">
+    <div class="s pos"><b>What's promising</b><br>AI watermarking already works at scale; stripping a signature is detectable; provenance stops the game rather than chasing it.</div>
+    <div class="s bad"><b>What's fragile</b><br>Patchy adoption, metadata that washes off, and a trust chain that breaks if a signing key is compromised.</div>
+  </div>
+
+  <div class="big warn">
+    <div class="lbl">The single biggest worry</div>
+    <p>If adoption stays patchy — cameras optional, platforms indifferent, editors stripping credentials — signed content becomes a minority luxury signal while unsigned content stays the norm. The standard solves for the professional and affluent; it doesn't flip the default for everyday images.</p>
+  </div>
+
+  <h2>The surprising part</h2>
+  <p>Watermarking AI output already works nearly perfectly — yet almost nobody checks for it. And provenance is harder for ordinary users to verify (it needs a validator lookup) and depends on a fragile chain of trust. The real risk is social: people learn to ignore unsigned media, then bad actors just stop signing, and the whole scheme becomes security theater.</p>
+
+  <div class="big">
+    <div class="lbl">In one sentence</div>
+    <p>The fix for deepfakes may be signing the real rather than catching fakes — but only if every camera, editor, and platform enforces "unsigned is guilty until verified," a coordination problem bigger than any one standard.</p>
+  </div>
+
+  <footer>
+    <a href="credential-fraud.html">Next: Credential fraud — you can't trust a diploma or a video call →</a><br><br>
+    Research run on Haiku, direct. Part of <a href="index.html">The Verification Tax</a>.
+  </footer>
+</div>
+</body>
+</html>

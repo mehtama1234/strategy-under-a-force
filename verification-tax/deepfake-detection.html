@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Deepfake detection — The Verification Tax</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="acc-blue">
+<div class="wrap">
+  <nav class="top">
+    <a href="index.html">← all 13</a>
+    <span><a href="supply-chain-provenance.html">← supply-chain provenance</a> · <a href="content-provenance.html">content provenance →</a></span>
+  </nav>
+
+  <header class="hero">
+    <div class="eyebrow">Group C · Proving content is real</div>
+    <h1>Deepfake detection</h1>
+    <p class="sub">A single fake video already stole $25 million — and the detectors are losing.</p>
+  </header>
+
+  <p class="lede">AI can now fake voices, faces, and video convincingly, so a new industry sells detection — and it's losing the arms race. A deepfake of a company's CFO on a video call stole $25M in one go. Voice clones drain relatives and executives. Detectors that work in the lab collapse on new, real-world fakes. "Is this real?" is becoming a question you literally can't answer by looking or listening.</p>
+
+  <div class="big">
+    <div class="lbl">The core bet</div>
+    <p>The bet was that you can spot a fake after it's made. But generators improve monthly, and detectors trained on yesterday's fakes fail on today's. The industry is quietly pivoting from <em>catching the fake</em> to <em>proving the real</em>, because detection has become too unreliable to trust.</p>
+  </div>
+
+  <h2>What the numbers say</h2>
+
+  <div class="fact"><div class="num warn">$25.6M</div><div class="txt">Stolen from engineering firm <b>Arup</b> (Hong Kong, Feb 2024) in a day — staff duped by a deepfake video call of the "CFO" and colleagues.</div></div>
+
+  <div class="fact"><div class="num warn">50–65%</div><div class="txt">Real-world accuracy of commercial detectors — versus 95–98% on lab benchmarks. A 20–60 point drop on each new generator.</div></div>
+
+  <div class="fact"><div class="num warn">3 seconds</div><div class="txt">Audio needed to clone a voice convincingly; voice-scam ("vishing") activity surged sharply, with six-figure CEO-voice thefts.</div></div>
+
+  <div class="fact"><div class="num warn">$2.77B</div><div class="txt">US losses to AI-assisted business-email/deepfake fraud in 2024 — average executive wire-transfer scam over $250k.</div></div>
+
+  <h2>Detection can't generalize</h2>
+  <p>The core failure: a detector trained on one deepfake pipeline fails on the next. Cross-dataset accuracy is ~50% or worse — a coin flip. So today's detector is already obsolete, and worse than useless when it gives false confidence that a new fake is real. That's why the field is turning to provenance — proving real content at the source instead of chasing fakes (see the next page).</p>
+
+  <div class="split">
+    <div class="s pos"><b>What's newly valuable</b><br>Voice/video verification for banks and enterprises, and — increasingly — provenance signing over detection.</div>
+    <div class="s bad"><b>What's failing</b><br>Detection itself: it lags generators by 6–18 months and collapses on anything new.</div>
+  </div>
+
+  <div class="big warn">
+    <div class="lbl">The single biggest worry</div>
+    <p>A single convincing deepfake already stole $25M, unrecovered, and detectors now create false confidence while failing on the newest fakes. If accuracy keeps dropping as quality rises, "is this real?" becomes unanswerable — breaking trust in video evidence for fraud, courts, and journalism.</p>
+  </div>
+
+  <h2>The surprising part</h2>
+  <p>The fakers are simply winning. Detection tools that work today fail on next-generation deepfakes, and both making and detecting fakes run on the same AI, so the two escalate together. The likely fix isn't a better detector — it's abandoning detection for provenance, proving the real rather than chasing the fake.</p>
+
+  <div class="big">
+    <div class="lbl">In one sentence</div>
+    <p>Deepfake generators now beat detectors so reliably that the industry is pivoting from spotting fakes to proving originals — because "is this real?" can no longer be answered by looking.</p>
+  </div>
+
+  <footer>
+    <a href="content-provenance.html">Next: Content provenance — sign the real, don't catch the fake →</a><br><br>
+    Research run on Haiku, direct. Part of <a href="index.html">The Verification Tax</a>.
+  </footer>
+</div>
+</body>
+</html>
