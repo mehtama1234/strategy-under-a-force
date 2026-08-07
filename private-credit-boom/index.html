@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Private-Credit Boom — how lending moved into the shadows</title>
+<style>
+:root{
+  --g0:#0d1117;--g1:#11161e;--g2:#161c26;--g3:#1c2330;--line:#272f3d;--line2:#1e2635;
+  --ink:#e8e3d8;--ink2:#b8c0cc;--ink3:#7a8494;
+  --teal:#3ec9b6;--orange:#e09858;--gold:#c9a84c;--red:#d97a6c;--blue:#6c9fd9;--purple:#a98cd9;--green:#7bbf6a;
+  --serif:Palatino,"Palatino Linotype","Book Antiqua",Charter,Georgia,serif;--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--g0);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 clamp(22px,5vw,60px) 100px}
+a{color:var(--gold);text-underline-offset:3px}
+.top{padding:26px 0 6px;display:flex;gap:14px;flex-wrap:wrap}
+.back{font-family:var(--mono);font-size:.72rem;color:var(--ink3);text-decoration:none}.back:hover{color:var(--gold)}
+.hero{padding:38px 0 26px;border-bottom:1px solid var(--line)}
+.hero .eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:700;line-height:1.08;color:var(--ink);letter-spacing:-.02em;text-wrap:balance;margin-bottom:.35em}
+.hero .sub{font-size:1.14rem;color:var(--ink2);font-style:italic}
+.lede{font-size:1.13rem;color:var(--ink);line-height:1.7;margin:1.4em 0}
+.big{background:var(--g2);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:18px 22px;margin:1.5em 0}
+.big .lbl{font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.big p{color:var(--ink);font-size:1.06rem;margin:0}
+.sec{margin:2.6em 0 0}
+.sec-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding-top:1.4em;border-top:1px solid var(--line2);margin-bottom:2px}
+.sec-h .tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 9px;border-radius:20px;border:1px solid}
+.sec-h h2{font-size:1.5rem;font-weight:600;color:var(--ink);line-height:1.15}
+.sec-sub{color:var(--ink3);font-size:.98rem;margin:.2em 0 1em}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:1em 0}
+@media(max-width:620px){.cards{grid-template-columns:1fr}}
+.card{background:var(--g1);border:1px solid var(--line2);border-radius:11px;padding:15px 16px;border-left:3px solid;text-decoration:none;display:block;transition:transform .13s,border-color .13s}
+.card:hover{transform:translateY(-2px)}
+.card .co{font-size:1.08rem;color:var(--ink);font-weight:700}
+.card .one{font-size:.92rem;color:var(--ink2);margin:.25em 0 .5em;font-style:italic;line-height:1.4}
+.card .risk{font-family:var(--mono);font-size:.64rem;letter-spacing:.04em;color:var(--ink3)}
+.card .risk b{color:var(--ink);font-family:var(--serif);font-style:normal;font-weight:600;font-size:.92rem}
+.a1 .tag{color:var(--red);border-color:var(--red)} .a1 .card{border-left-color:var(--red)}
+.a2 .tag{color:var(--green);border-color:var(--green)} .a2 .card{border-left-color:var(--green)}
+.a3 .tag{color:var(--blue);border-color:var(--blue)} .a3 .card{border-left-color:var(--blue)}
+.a4 .tag{color:var(--purple);border-color:var(--purple)} .a4 .card{border-left-color:var(--purple)}
+.a5 .tag{color:var(--gold);border-color:var(--gold)} .a5 .card{border-left-color:var(--gold)}
+footer{padding:44px 0 40px;color:var(--ink3);font-family:var(--mono);font-size:.72rem;border-top:1px solid var(--line2);margin-top:3em;line-height:1.9}
+footer a{color:var(--gold);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="back" href="../index.html">★ all forces</a><a class="back" href="../everyones-a-bank/index.html">Everyone's a Bank</a><a class="back" href="../the-roll-up/index.html">The Roll-Up</a><a class="back" href="../end-of-cheap-money/index.html">End of Cheap Money</a></div>
+
+  <header class="hero">
+    <div class="eyebrow">A collection · plain English · 2026</div>
+    <h1>The Private-Credit Boom</h1>
+    <div class="sub">How lending quietly moved out of the banks and into a $2-trillion shadow nobody can quite price.</div>
+  </header>
+
+  <p class="lede">The 29th force. Since 2008, and explosively since 2020, lending migrated out of regulated banks and into private investment funds — Apollo, Ares, Blackstone, KKR, Blue Owl — that gather long-term money and lend it straight to companies, keeping the fat spread. It's now a ~$2 trillion market, fueled by insurance and pension money hunting yield, lending mostly to buyouts. The one idea: <em>the bank got disintermediated — lending moved into the shadows, and nobody's quite sure what it's worth.</em></p>
+
+  <div class="big">
+    <div class="lbl">The one question, asked of everyone</div>
+    <p>What did the private-credit boom make <em>scarce, cheap, safe, risky, or newly worth money</em>? Certainty and privacy became the scarce goods borrowers pay up for; permanent capital became the prize; and a daily market price became the thing that vanished. The danger: risk didn't disappear — it moved somewhere with less disclosure, valued by a model instead of a market, and never tested by a real downturn at this size.</p>
+  </div>
+
+  <p style="text-align:center;margin:1.7em 0"><a href="patterns.html" style="display:inline-block;font-family:var(--mono);font-size:.8rem;letter-spacing:.03em;color:var(--gold);border:1px solid var(--gold);border-radius:24px;padding:10px 22px;text-decoration:none">★ The patterns — what repeats across all 13 &nbsp;→</a></p>
+
+  <section class="sec a1">
+    <div class="sec-h"><span class="tag">Group A</span><h2>Why the banks retreated</h2></div>
+    <div class="sec-sub">A gap opened where banks used to lend — and funds rushed in.</div>
+    <div class="cards">
+      <a class="card" href="banks-retreated.html"><div class="co">Banks retreated</div><div class="one">Rules made banks safer by pushing lending out.</div><div class="risk">Worry: <b>an unregulated shadow bank</b></div></a>
+      <a class="card" href="the-yield-hunt.html"><div class="co">The yield hunt</div><div class="one">Zero rates forced pensions to reach for return.</div><div class="risk">Worry: <b>the cautious took the risk</b></div></a>
+      <a class="card" href="direct-lending-replaces-bonds.html"><div class="co">Direct lending</div><div class="one">One fund now writes a $5B loan, privately.</div><div class="risk">Worry: <b>concentration, no market</b></div></a>
+    </div>
+  </section>
+
+  <section class="sec a2">
+    <div class="sec-h"><span class="tag">Group B</span><h2>Who's doing it, and how</h2></div>
+    <div class="sec-sub">A handful of giants, fueled by insurance, lending to buyouts.</div>
+    <div class="cards">
+      <a class="card" href="the-giants.html"><div class="co">The giants</div><div class="one">A few firms became the new banks of Wall Street.</div><div class="risk">Worry: <b>half the market, five firms</b></div></a>
+      <a class="card" href="insurance-is-the-fuel.html"><div class="co">Insurance is the fuel</div><div class="one">Retirees' annuity money funds the loans.</div><div class="risk">Worry: <b>conflicts hidden in plain sight</b></div></a>
+      <a class="card" href="lending-to-buyouts.html"><div class="co">Lending to buyouts</div><div class="one">The buyer and the lender are the same club.</div><div class="risk">Worry: <b>a self-financing loop</b></div></a>
+    </div>
+  </section>
+
+  <section class="sec a3">
+    <div class="sec-h"><span class="tag">Group C</span><h2>The risks &amp; the dark corners</h2></div>
+    <div class="sec-sub">The part where nobody can see the price.</div>
+    <div class="cards">
+      <a class="card" href="opacity-and-marks.html"><div class="co">Opacity &amp; marks</div><div class="one">Nobody knows what the loans are really worth.</div><div class="risk">Worry: <b>smooth marks hide trouble</b></div></a>
+      <a class="card" href="safer-or-hidden.html"><div class="co">Safer, or just hidden?</div><div class="one">Patient money — or risk with the lights off.</div><div class="risk">Worry: <b>no lender of last resort</b></div></a>
+      <a class="card" href="what-happens-downturn.html"><div class="co">What happens in a downturn</div><div class="one">A $2T market never tested by a recession.</div><div class="risk">Worry: <b>redemption gates, not defaults</b></div></a>
+    </div>
+  </section>
+
+  <section class="sec a4">
+    <div class="sec-h"><span class="tag">Group D</span><h2>The mechanism &amp; the moves</h2></div>
+    <div class="sec-sub">How the machine works, and where it's headed next.</div>
+    <div class="cards">
+      <a class="card" href="the-machine.html"><div class="co">The machine</div><div class="one">Gather long money, lend it, keep the spread.</div><div class="risk">Worry: <b>fees reward deploying, not picking</b></div></a>
+      <a class="card" href="why-borrowers-prefer-it.html"><div class="co">Why borrowers prefer it</div><div class="one">They pay more for speed and privacy.</div><div class="risk">Worry: <b>total dependence on one lender</b></div></a>
+      <a class="card" href="retail-comes-in.html"><div class="co">Retail comes in</div><div class="one">Now they want your 401(k).</div><div class="risk">Worry: <b>illiquid loans, liquid promises</b></div></a>
+    </div>
+  </section>
+
+  <section class="sec a5">
+    <div class="sec-h"><span class="tag">Group E</span><h2>The big picture</h2></div>
+    <div class="sec-sub">The whole force in one place.</div>
+    <div class="cards">
+      <a class="card" href="private-credit-boom.html"><div class="co">The private-credit boom</div><div class="one">The bank got disintermediated; risk moved into the shadows.</div><div class="risk">Worry: <b>priced by a model, not a market</b></div></a>
+    </div>
+  </section>
+
+  <footer>
+    Plain English, research-checked (research run on Haiku, direct — no sub-agents).<br><br>
+    Part of a series: <a href="../index.html">★ all forces</a> · <a href="../everyones-a-bank/index.html">Everyone's a Bank</a> · <a href="../the-roll-up/index.html">The Roll-Up</a> · <a href="../end-of-cheap-money/index.html">End of Cheap Money</a>
+  </footer>
+</div>
+</body>
+</html>
